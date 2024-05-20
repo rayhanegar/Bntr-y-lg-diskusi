@@ -127,13 +127,7 @@ INPUT C:\Users\RAYHAN EGAR\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfon
 INPUT C:\Users\RAYHAN EGAR\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\symbols\msbm7.tfm
 INPUT C:\Users\RAYHAN EGAR\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\symbols\msbm5.tfm
 INPUT C:\Users\RAYHAN EGAR\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\times\ptmr7t.tfm
-INPUT C:\Users\RAYHAN EGAR\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmr9.tfm
-INPUT C:\Users\RAYHAN EGAR\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmr6.tfm
-INPUT C:\Users\RAYHAN EGAR\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmmi9.tfm
-INPUT C:\Users\RAYHAN EGAR\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmmi6.tfm
-INPUT C:\Users\RAYHAN EGAR\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmsy9.tfm
-INPUT C:\Users\RAYHAN EGAR\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmsy6.tfm
-INPUT C:\Users\RAYHAN EGAR\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\cmextra\cmex9.tfm
+INPUT C:\Users\RAYHAN EGAR\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\times\ptmrc7t.tfm
 INPUT C:\Users\RAYHAN EGAR\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\cmextra\cmex7.tfm
 INPUT C:\Users\RAYHAN EGAR\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\cmextra\cmex7.tfm
 INPUT C:\Users\RAYHAN EGAR\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\symbols\msam10.tfm
@@ -142,13 +136,6 @@ INPUT C:\Users\RAYHAN EGAR\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfon
 INPUT C:\Users\RAYHAN EGAR\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\symbols\msbm10.tfm
 INPUT C:\Users\RAYHAN EGAR\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\symbols\msbm7.tfm
 INPUT C:\Users\RAYHAN EGAR\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\symbols\msbm5.tfm
-INPUT C:\Users\RAYHAN EGAR\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\times\ptmb7t.tfm
-INPUT C:\Users\RAYHAN EGAR\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\times\ptmrc7t.tfm
-INPUT C:\Users\RAYHAN EGAR\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\cmextra\cmex7.tfm
-INPUT C:\Users\RAYHAN EGAR\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\symbols\msam10.tfm
-INPUT C:\Users\RAYHAN EGAR\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\symbols\msam7.tfm
-INPUT C:\Users\RAYHAN EGAR\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\symbols\msbm10.tfm
-INPUT C:\Users\RAYHAN EGAR\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\symbols\msbm7.tfm
 OUTPUT Final_Project_PPM.pdf
 INPUT C:\Users\RAYHAN EGAR\AppData\Local\Programs\MiKTeX\fonts\vf\adobe\times\ptmr7t.vf
 INPUT C:\Users\RAYHAN EGAR\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\times\ptmr8r.tfm
@@ -168,43 +155,144 @@ INPUT C:\Users\RAYHAN EGAR\AppData\Local\Programs\MiKTeX\fonts\vf\adobe\times\pt
 INPUT C:\Users\RAYHAN EGAR\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\times\ptmbi8r.tfm
 INPUT C:\Users\RAYHAN EGAR\AppData\Local\Programs\MiKTeX\fonts\vf\adobe\times\ptmb7t.vf
 INPUT C:\Users\RAYHAN EGAR\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\times\ptmb8r.tfm
-INPUT C:\Users\RAYHAN EGAR\AppData\Local\Programs\MiKTeX\fonts\vf\adobe\times\ptmb7t.vf
-INPUT C:\Users\RAYHAN EGAR\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\times\ptmb8r.tfm
 INPUT C:\Users\RAYHAN EGAR\AppData\Local\Programs\MiKTeX\fonts\vf\adobe\times\ptmrc7t.vf
 INPUT C:\Users\RAYHAN EGAR\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\times\ptmr8r.tfm
+INPUT .\LGBM.png
+INPUT .\LGBM.png
+INPUT .\LGBM.png
+INPUT .\LGBM.png
+INPUT .\LGBM.png
+INPUT .\LGBM.png
+INPUT .\LGBM.png
+INPUT .\stacking.png
+INPUT .\stacking.png
+INPUT .\stacking.png
+INPUT .\stacking.png
+INPUT .\stacking.png
+INPUT .\stacking.png
+INPUT .\stacking.png
 INPUT C:\Users\RAYHAN EGAR\AppData\Local\Programs\MiKTeX\fonts\vf\adobe\times\ptmr7t.vf
-INPUT C:\Users\RAYHAN EGAR\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\times\ptmr8r.tfm
-INPUT C:\Users\RAYHAN EGAR\AppData\Local\Programs\MiKTeX\tex\latex\psnfss\ot1pcr.fd
-INPUT C:\Users\RAYHAN EGAR\AppData\Local\Programs\MiKTeX\tex\latex\psnfss\ot1pcr.fd
-INPUT C:\Users\RAYHAN EGAR\AppData\Local\Programs\MiKTeX\tex\latex\psnfss\ot1pcr.fd
-INPUT C:\Users\RAYHAN EGAR\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\courier\pcrr7t.tfm
-INPUT C:\Users\RAYHAN EGAR\AppData\Local\Programs\MiKTeX\fonts\vf\adobe\times\ptmri7t.vf
-INPUT C:\Users\RAYHAN EGAR\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\times\ptmri8r.tfm
-INPUT C:\Users\RAYHAN EGAR\AppData\Local\Programs\MiKTeX\fonts\vf\adobe\courier\pcrr7t.vf
-INPUT C:\Users\RAYHAN EGAR\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\courier\pcrr8r.tfm
+INPUT .\churn_distribution.png
+INPUT .\churn_distribution.png
+INPUT .\churn_distribution.png
+INPUT .\churn_distribution.png
+INPUT .\churn_distribution.png
+INPUT .\churn_distribution.png
+INPUT .\churn_distribution.png
+INPUT .\churn_nan.png
+INPUT .\churn_nan.png
+INPUT .\churn_nan.png
+INPUT .\churn_nan.png
+INPUT .\churn_nan.png
+INPUT .\churn_nan.png
+INPUT .\churn_nan.png
+INPUT .\churn_corr_heatmap.png
+INPUT .\churn_corr_heatmap.png
+INPUT .\churn_corr_heatmap.png
+INPUT .\churn_corr_heatmap.png
+INPUT .\churn_corr_heatmap.png
+INPUT .\churn_corr_heatmap.png
+INPUT .\churn_corr_heatmap.png
+INPUT .\horse_distribution.png
+INPUT .\horse_distribution.png
+INPUT .\horse_distribution.png
+INPUT .\horse_distribution.png
+INPUT .\horse_distribution.png
+INPUT .\horse_distribution.png
+INPUT .\horse_distribution.png
+INPUT .\horse_feature_description.png
+INPUT .\horse_feature_description.png
+INPUT .\horse_feature_description.png
+INPUT .\horse_feature_description.png
+INPUT .\horse_feature_description.png
+INPUT .\horse_feature_description.png
+INPUT .\horse_feature_description.png
+INPUT .\horse_corr.png
+INPUT .\horse_corr.png
+INPUT .\horse_corr.png
+INPUT .\horse_corr.png
+INPUT .\horse_corr.png
+INPUT .\horse_corr.png
+INPUT .\horse_corr.png
+INPUT .\KID_Class_Distribution.png
+INPUT .\KID_Class_Distribution.png
+INPUT .\KID_Class_Distribution.png
+INPUT .\KID_Class_Distribution.png
+INPUT .\KID_Class_Distribution.png
+INPUT .\KID_Class_Distribution.png
+INPUT .\KID_Class_Distribution.png
+INPUT .\KID_Missing_Values.png
+INPUT .\KID_Missing_Values.png
+INPUT .\KID_Missing_Values.png
+INPUT .\KID_Missing_Values.png
+INPUT .\KID_Missing_Values.png
+INPUT .\KID_Missing_Values.png
+INPUT .\KID_Missing_Values.png
+INPUT .\KID_Continuous_Features_Correlation_Heatmap.png
+INPUT .\KID_Continuous_Features_Correlation_Heatmap.png
+INPUT .\KID_Continuous_Features_Correlation_Heatmap.png
+INPUT .\KID_Continuous_Features_Correlation_Heatmap.png
+INPUT .\KID_Continuous_Features_Correlation_Heatmap.png
+INPUT .\KID_Continuous_Features_Correlation_Heatmap.png
+INPUT .\KID_Continuous_Features_Correlation_Heatmap.png
+INPUT .\gridsearch.png
+INPUT .\gridsearch.png
+INPUT .\gridsearch.png
+INPUT .\gridsearch.png
+INPUT .\gridsearch.png
+INPUT .\gridsearch.png
+INPUT .\gridsearch.png
+INPUT .\optuna.png
+INPUT .\optuna.png
+INPUT .\optuna.png
+INPUT .\optuna.png
+INPUT .\optuna.png
+INPUT .\optuna.png
+INPUT .\optuna.png
+INPUT .\confusionmatrix.png
+INPUT .\confusionmatrix.png
+INPUT .\confusionmatrix.png
+INPUT .\confusionmatrix.png
+INPUT .\confusionmatrix.png
+INPUT .\confusionmatrix.png
+INPUT .\confusionmatrix.png
 INPUT C:\Users\RAYHAN EGAR\AppData\Local\Programs\MiKTeX\fonts\vf\adobe\times\ptmb7t.vf
 INPUT C:\Users\RAYHAN EGAR\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\times\ptmb8r.tfm
-INPUT C:\Users\RAYHAN EGAR\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\times\ptmrc7t.tfm
-INPUT C:\Users\RAYHAN EGAR\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\cmextra\cmex8.tfm
-INPUT C:\Users\RAYHAN EGAR\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\symbols\msam10.tfm
-INPUT C:\Users\RAYHAN EGAR\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\symbols\msbm10.tfm
-INPUT .\fig1.png
-INPUT .\fig1.png
-INPUT .\fig1.png
-INPUT .\fig1.png
-INPUT .\fig1.png
-INPUT .\fig1.png
-INPUT .\fig1.png
-INPUT C:\Users\RAYHAN EGAR\AppData\Local\Programs\MiKTeX\tex\latex\psnfss\omsptm.fd
-INPUT C:\Users\RAYHAN EGAR\AppData\Local\Programs\MiKTeX\tex\latex\psnfss\omsptm.fd
-INPUT C:\Users\RAYHAN EGAR\AppData\Local\Programs\MiKTeX\tex\latex\psnfss\omsptm.fd
-INPUT C:\Users\RAYHAN EGAR\AppData\Local\Programs\MiKTeX\fonts\vf\adobe\times\ptmr7t.vf
-INPUT C:\Users\RAYHAN EGAR\AppData\Local\Programs\MiKTeX\fonts\vf\adobe\times\ptmrc7t.vf
-INPUT C:\Users\RAYHAN EGAR\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\times\ptmr8r.tfm
-INPUT C:\Users\RAYHAN EGAR\AppData\Local\Programs\MiKTeX\fonts\vf\adobe\times\ptmb7t.vf
-INPUT C:\Users\RAYHAN EGAR\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\times\ptmb8r.tfm
-INPUT C:\Users\RAYHAN EGAR\AppData\Local\Programs\MiKTeX\fonts\vf\adobe\times\ptmbi7t.vf
-INPUT C:\Users\RAYHAN EGAR\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\times\ptmbi8r.tfm
+INPUT .\spaceship_log.png
+INPUT .\spaceship_log.png
+INPUT .\spaceship_log.png
+INPUT .\spaceship_log.png
+INPUT .\spaceship_log.png
+INPUT .\spaceship_log.png
+INPUT .\spaceship_log.png
+INPUT .\churn_log.png
+INPUT .\churn_log.png
+INPUT .\churn_log.png
+INPUT .\churn_log.png
+INPUT .\churn_log.png
+INPUT .\churn_log.png
+INPUT .\churn_log.png
+INPUT .\horse_log.png
+INPUT .\horse_log.png
+INPUT .\horse_log.png
+INPUT .\horse_log.png
+INPUT .\horse_log.png
+INPUT .\horse_log.png
+INPUT .\horse_log.png
+INPUT .\KID_Dataset_Selection.png
+INPUT .\KID_Dataset_Selection.png
+INPUT .\KID_Dataset_Selection.png
+INPUT .\KID_Dataset_Selection.png
+INPUT .\KID_Dataset_Selection.png
+INPUT .\KID_Dataset_Selection.png
+INPUT .\KID_Dataset_Selection.png
+INPUT .\kid_log.png
+INPUT .\kid_log.png
+INPUT .\kid_log.png
+INPUT .\kid_log.png
+INPUT .\kid_log.png
+INPUT .\kid_log.png
+INPUT .\kid_log.png
 INPUT Final_Project_PPM.aux
 INPUT C:\Users\RAYHAN EGAR\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmex10.pfb
 INPUT C:\Users\RAYHAN EGAR\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmex10.pfb
@@ -218,16 +306,12 @@ INPUT C:\Users\RAYHAN EGAR\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsf
 INPUT C:\Users\RAYHAN EGAR\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmr10.pfb
 INPUT C:\Users\RAYHAN EGAR\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmr5.pfb
 INPUT C:\Users\RAYHAN EGAR\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmr5.pfb
-INPUT C:\Users\RAYHAN EGAR\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmr6.pfb
-INPUT C:\Users\RAYHAN EGAR\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmr6.pfb
 INPUT C:\Users\RAYHAN EGAR\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmr7.pfb
 INPUT C:\Users\RAYHAN EGAR\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmr7.pfb
 INPUT C:\Users\RAYHAN EGAR\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmsy10.pfb
 INPUT C:\Users\RAYHAN EGAR\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmsy10.pfb
 INPUT C:\Users\RAYHAN EGAR\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmsy7.pfb
 INPUT C:\Users\RAYHAN EGAR\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmsy7.pfb
-INPUT C:\Users\RAYHAN EGAR\AppData\Local\Programs\MiKTeX\fonts\type1\urw\courier\ucrr8a.pfb
-INPUT C:\Users\RAYHAN EGAR\AppData\Local\Programs\MiKTeX\fonts\type1\urw\courier\ucrr8a.pfb
 INPUT C:\Users\RAYHAN EGAR\AppData\Local\Programs\MiKTeX\fonts\type1\urw\times\utmb8a.pfb
 INPUT C:\Users\RAYHAN EGAR\AppData\Local\Programs\MiKTeX\fonts\type1\urw\times\utmb8a.pfb
 INPUT C:\Users\RAYHAN EGAR\AppData\Local\Programs\MiKTeX\fonts\type1\urw\times\utmbi8a.pfb

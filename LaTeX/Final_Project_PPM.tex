@@ -63,18 +63,40 @@ siahaanarion@student.ub.ac.id}
 \maketitle
 
 \begin{abstract}
-This document is a model and instructions for \LaTeX.
-This and the IEEEtran.cls file define the components of your paper [title, text, heads, etc.]. *CRITICAL: Do Not Use Symbols, Special Characters, Footnotes, 
-or Math in Paper Title or Abstract.
+    Machine Learning (ML) is a cornerstone technology advancing various aspects of human life, focusing on developing algorithms that enable systems to learn from data and make predictions or 
+    decisions without explicit programming. A key aspect of ML is supervised learning, where models learn from input-output pairs to predict or classify new data. This paper aims to address the challenge of 
+    selecting appropriate classification methods by comparing various techniques from the literature.
+
+    Datasets used include Spaceship Titanic, Bank Churn, Horse Health, and Keep-it-Dry, each chosen for their diverse features and predictive challenges. Preprocessing steps involve data encoding, 
+    scaling, and handling missing values. Supervised learning algorithms explored are CatBoost, AdaBoost, LightGBM, and ensemble methods like stacking and K-Nearest Neighbor (KNN). Hyperparameter 
+    optimization techniques such as GridSearchCV and Optuna are employed to enhance performance. Evaluation metrics include confusion matrix, recall, precision, accuracy, F1-score, AUC-ROC, and cross-validation.
+
+    Results indicate that tree-based classifiers like LightGBM, CatBoost, and XGBoost generally perform well across different datasets, achieving higher accuracy and better generalization. 
+    However, linear classifiers like Ridge Classifier and Logistic Regression also show competitive performance, especially in stability and reliability on test data, when combined with appropriate preprocessing techniques.
+
+    In conclusion, this study underscores the importance of proper data preprocessing, the effectiveness of Principal Component Analysis (PCA) in improving model generalization, and the critical 
+    role of hyperparameter tuning in developing robust ML models. The insights from this comparative analysis can guide practitioners in selecting and fine-tuning classification algorithms for varied predictive tasks.
 \end{abstract}
 
 \begin{IEEEkeywords}
-component, formatting, style, styling, insert
+Supervised Machine Learning, Classification Algorithms, Supervised Machine Learning Comparative Study
 \end{IEEEkeywords}
 
 \section{Introduction}
-This document is a model and instructions for \LaTeX.
-Please observe the conference page limits. 
+Pembelajaran Mesin (ML) telah menjadi salah satu fondasi teknologi yang mendukung kemajuan teknologi dalam berbagai aspek kehidupan manusia \cite{b2}. 
+Sebagai cabang dari kecerdasan buatan (AI), ML bertujuan untuk mengembangkan algoritma dan model komputasional yang memungkinkan sistem untuk belajar dari data dan membuat 
+prediksi atau keputusan tanpa perlu diprogram secara eksplisit \cite{b1}.
+
+Salah satu aspek penting dari ML adalah supervised control, di mana model diberikan pasangan input-output dalam data pelatihan untuk mempelajari 
+hubungan antara mereka \cite{b1}. Dengan menggunakan metode ini, model dapat melakukan prediksi atau klasifikasi pada data baru berdasarkan 
+pembelajaran dari data pelatihan yang ada \cite{b1}.
+
+Klasifikasi dengan supervised learning adalah salah satu teknik yang paling fundamental dan sering digunakan \cite{b1}. Dengan memanfaatkan dataset yang telah dilabeli, 
+model dilatih untuk mengenali pola dan membuat prediksi yang akurat terhadap data baru \cite{b2}. Namun, dalam menghadapi berbagai tugas klasifikasi, peneliti dan praktisi ML 
+seringkali dihadapkan pada tantangan dalam memilih metode yang paling sesuai untuk kasus tertentu \cite{b1}.
+
+Paper ini dibuat bertujuan untuk menjawab tantangan tersebut dengan melakukan studi perbandingan terhadap berbagai metode klasifikasi yang telah diusulkan dalam literatur ilmiah \cite{b3}. 
+Dengan menggunakan referensi dari jurnal-jurnal terkemuka, kami mengumpulkan berbagai pendekatan klasifikasi dengan supervised yang memiliki keunggulan dan kelemahan masing-masing \cite{b3}.
 
 \section{Algoritma Klasifikasi Supervised Learning}
 
@@ -349,205 +371,568 @@ Teknik boosting ini memungkinkan CatBoost untuk memperbaiki kesalahan prediksi s
 waktu prediksi dan pelatihan. Algoritma ini juga memanfaatkan regularisasi untuk menghindari overfitting dan meningkatkan generalisasi model \cite{b29}.
 
 \subsection{Adaptive Boosting (AdaBoost)}
+Algoritma Adaboost adalah salah satu dari \textit{boosting classification algorithm} yang dapat meningkatkan kelompok klasifikasi “lemah” menjadi klasifikasi “kuat” \cite{b33}. 
+Dalam \textit{supervised learning}, \textit{boosting} digunakan untuk mengurangi bias dan variasi.
+Prosesnya dimulai dengan melatih model dasar (biasanya decision tree sederhana) pada dataset asli. Setelah setiap iterasi, data yang diklasifikasikan dengan benar 
+oleh model diberi bobot yang lebih rendah, sementara data yang salah diklasifikasikan diberi bobot yang lebih tinggi. Model selanjutnya dilatih untuk fokus pada 
+data yang sulit ini. Proses ini diulang beberapa kali, dan model akhir adalah kombinasi berbobot dari semua model dasar yang dilatih. Bobot setiap model dalam 
+kombinasi akhir ditentukan berdasarkan akurasinya. Dengan demikian, AdaBoost secara adaptif meningkatkan kinerja model dengan memberikan perhatian lebih 
+pada kesalahan yang dibuat oleh model sebelumnya \cite{b34}.
 
 \subsection{Light Gradient Boosting Machine (LGBM)}
 
-\subsection{Ensemble (Stacking)}
-
-\section{Prepare Your Paper Before Styling}
-Before you begin to format your paper, first write and save the content as a 
-separate text file. Complete all content and organizational editing before 
-formatting. Please note sections \ref{AA}--\ref{SCM} below for more information on 
-proofreading, spelling and grammar.
-
-Keep your text and graphic files separate until after the text has been 
-formatted and styled. Do not number text heads---{\LaTeX} will do that 
-for you.
-
-\subsection{Abbreviations and Acronyms}\label{AA}
-Define abbreviations and acronyms the first time they are used in the text, 
-even after they have been defined in the abstract. Abbreviations such as 
-IEEE, SI, MKS, CGS, ac, dc, and rms do not have to be defined. Do not use 
-abbreviations in the title or heads unless they are unavoidable.
-
-\subsection{Units}
-\begin{itemize}
-\item Use either SI (MKS) or CGS as primary units. (SI units are encouraged.) English units may be used as secondary units (in parentheses). An exception would be the use of English units as identifiers in trade, such as ``3.5-inch disk drive''.
-\item Avoid combining SI and CGS units, such as current in amperes and magnetic field in oersteds. This often leads to confusion because equations do not balance dimensionally. If you must use mixed units, clearly state the units for each quantity that you use in an equation.
-\item Do not mix complete spellings and abbreviations of units: ``Wb/m\textsuperscript{2}'' or ``webers per square meter'', not ``webers/m\textsuperscript{2}''. Spell out units when they appear in text: ``. . . a few henries'', not ``. . . a few H''.
-\item Use a zero before decimal points: ``0.25'', not ``.25''. Use ``cm\textsuperscript{3}'', not ``cc''.)
-\end{itemize}
-
-\subsection{Equations}
-Number equations consecutively. To make your 
-equations more compact, you may use the solidus (~/~), the exp function, or 
-appropriate exponents. Italicize Roman symbols for quantities and variables, 
-but not Greek symbols. Use a long dash rather than a hyphen for a minus 
-sign. Punctuate equations with commas or periods when they are part of a 
-sentence, as in:
-\begin{equation}
-a+b=\gamma\label{eq}
-\end{equation}
-
-Be sure that the 
-symbols in your equation have been defined before or immediately following 
-the equation. Use ``\eqref{eq}'', not ``Eq.~\eqref{eq}'' or ``equation \eqref{eq}'', except at 
-the beginning of a sentence: ``Equation \eqref{eq} is . . .''
-
-\subsection{\LaTeX-Specific Advice}
-
-Please use ``soft'' (e.g., \verb|\eqref{Eq}|) cross references instead
-of ``hard'' references (e.g., \verb|(1)|). That will make it possible
-to combine sections, add equations, or change the order of figures or
-citations without having to go through the file line by line.
-
-Please don't use the \verb|{eqnarray}| equation environment. Use
-\verb|{align}| or \verb|{IEEEeqnarray}| instead. The \verb|{eqnarray}|
-environment leaves unsightly spaces around relation symbols.
-
-Please note that the \verb|{subequations}| environment in {\LaTeX}
-will increment the main equation counter even when there are no
-equation numbers displayed. If you forget that, you might write an
-article in which the equation numbers skip from (17) to (20), causing
-the copy editors to wonder if you've discovered a new method of
-counting.
-
-{\BibTeX} does not work by magic. It doesn't get the bibliographic
-data from thin air but from .bib files. If you use {\BibTeX} to produce a
-bibliography you must send the .bib files. 
-
-{\LaTeX} can't read your mind. If you assign the same label to a
-subsubsection and a table, you might find that Table I has been cross
-referenced as Table IV-B3. 
-
-{\LaTeX} does not have precognitive abilities. If you put a
-\verb|\label| command before the command that updates the counter it's
-supposed to be using, the label will pick up the last counter to be
-cross referenced instead. In particular, a \verb|\label| command
-should not go before the caption of a figure or a table.
-
-Do not use \verb|\nonumber| inside the \verb|{array}| environment. It
-will not stop equation numbers inside \verb|{array}| (there won't be
-any anyway) and it might stop a wanted equation number in the
-surrounding equation.
-
-\subsection{Some Common Mistakes}\label{SCM}
-\begin{itemize}
-\item The word ``data'' is plural, not singular.
-\item The subscript for the permeability of vacuum $\mu_{0}$, and other common scientific constants, is zero with subscript formatting, not a lowercase letter ``o''.
-\item In American English, commas, semicolons, periods, question and exclamation marks are located within quotation marks only when a complete thought or name is cited, such as a title or full quotation. When quotation marks are used, instead of a bold or italic typeface, to highlight a word or phrase, punctuation should appear outside of the quotation marks. A parenthetical phrase or statement at the end of a sentence is punctuated outside of the closing parenthesis (like this). (A parenthetical sentence is punctuated within the parentheses.)
-\item A graph within a graph is an ``inset'', not an ``insert''. The word alternatively is preferred to the word ``alternately'' (unless you really mean something that alternates).
-\item Do not use the word ``essentially'' to mean ``approximately'' or ``effectively''.
-\item In your paper title, if the words ``that uses'' can accurately replace the word ``using'', capitalize the ``u''; if not, keep using lower-cased.
-\item Be aware of the different meanings of the homophones ``affect'' and ``effect'', ``complement'' and ``compliment'', ``discreet'' and ``discrete'', ``principal'' and ``principle''.
-\item Do not confuse ``imply'' and ``infer''.
-\item The prefix ``non'' is not a word; it should be joined to the word it modifies, usually without a hyphen.
-\item There is no period after the ``et'' in the Latin abbreviation ``et al.''.
-\item The abbreviation ``i.e.'' means ``that is'', and the abbreviation ``e.g.'' means ``for example''.
-\end{itemize}
-An excellent style manual for science writers is \cite{b7}.
-
-\subsection{Authors and Affiliations}
-\textbf{The class file is designed for, but not limited to, six authors.} A 
-minimum of one author is required for all conference articles. Author names 
-should be listed starting from left to right and then moving down to the 
-next line. This is the author sequence that will be used in future citations 
-and by indexing services. Names should not be listed in columns nor group by 
-affiliation. Please keep your affiliations as succinct as possible (for 
-example, do not differentiate among departments of the same organization).
-
-\subsection{Identify the Headings}
-Headings, or heads, are organizational devices that guide the reader through 
-your paper. There are two types: component heads and text heads.
-
-Component heads identify the different components of your paper and are not 
-topically subordinate to each other. Examples include Acknowledgments and 
-References and, for these, the correct style to use is ``Heading 5''. Use 
-``figure caption'' for your Figure captions, and ``table head'' for your 
-table title. Run-in heads, such as ``Abstract'', will require you to apply a 
-style (in this case, italic) in addition to the style provided by the drop 
-down menu to differentiate the head from the text.
-
-Text heads organize the topics on a relational, hierarchical basis. For 
-example, the paper title is the primary text head because all subsequent 
-material relates and elaborates on this one topic. If there are two or more 
-sub-topics, the next level head (uppercase Roman numerals) should be used 
-and, conversely, if there are not at least two sub-topics, then no subheads 
-should be introduced.
-
-\subsection{Figures and Tables}
-\paragraph{Positioning Figures and Tables} Place figures and tables at the top and 
-bottom of columns. Avoid placing them in the middle of columns. Large 
-figures and tables may span across both columns. Figure captions should be 
-below the figures; table heads should appear above the tables. Insert 
-figures and tables after they are cited in the text. Use the abbreviation 
-``Fig.~\ref{fig}'', even at the beginning of a sentence.
-
-\begin{table}[htbp]
-\caption{Table Type Styles}
-\begin{center}
-\begin{tabular}{|c|c|c|c|}
-\hline
-\textbf{Table}&\multicolumn{3}{|c|}{\textbf{Table Column Head}} \\
-\cline{2-4} 
-\textbf{Head} & \textbf{\textit{Table column subhead}}& \textbf{\textit{Subhead}}& \textbf{\textit{Subhead}} \\
-\hline
-copy& More table copy$^{\mathrm{a}}$& &  \\
-\hline
-\multicolumn{4}{l}{$^{\mathrm{a}}$Sample of a Table footnote.}
-\end{tabular}
-\label{tab1}
-\end{center}
-\end{table}
-
 \begin{figure}[htbp]
-\centerline{\includegraphics{fig1.png}}
-\caption{Example of a figure caption.}
-\label{fig}
+    \centerline{\includegraphics[width=\linewidth]{LGBM.png}}
+    \caption{Light Gradient Boosting Machine (LGBM)}
+    \label{lgbm}
 \end{figure}
 
-Figure Labels: Use 8 point Times New Roman for Figure labels. Use words 
-rather than symbols or abbreviations when writing Figure axis labels to 
-avoid confusing the reader. As an example, write the quantity 
-``Magnetization'', or ``Magnetization, M'', not just ``M''. If including 
-units in the label, present them within parentheses. Do not label axes only 
-with units. In the example, write ``Magnetization (A/m)'' or ``Magnetization 
-\{A[m(1)]\}'', not just ``A/m''. Do not label axes with a ratio of 
-quantities and units. For example, write ``Temperature (K)'', not 
-``Temperature/K''.
+Algoritma LightGBM dikembangkan oleh Microsoft yang memberikan kemampuan yang efisien dari algoritma \textit{Gradient Boosting}. LightGBM memiliki 
+karakteristik yang membedakannya dengan algoritma \textit{tree boosting} lainnya adalah dengan membelah pohon secara memanjang 
+(\textit{leaf-wise tree growth}) dengan yang paling cocok, sedangkan algoritma \textit{tree boosting} lainnya membagi pohon secara mendalam atau sejajar (\textit{level-wise tree growth}) 
+yang ditunjukkan pada ``Fig. ~\ref{lgbm}'' \cite{b30}.
 
-\section*{Acknowledgment}
+LightGBM menggunakan dua teknik utama, yaitu \textit{Exclusive Feature Bundling} (EFB) dan \textit{Gradient-based One-Side Sampling} (GOSS), untuk meningkatkan kecepatan dan 
+mengurangi penggunaan memori. EFB menggabungkan fitur-fitur yang jarang digunakan menjadi satu fitur, mengurangi jumlah fitur yang perlu diproses. GOSS, 
+di sisi lain, memilih sampel dengan gradien besar dan mempertahankan distribusi data, sehingga mengurangi jumlah data yang diproses tanpa kehilangan akurasi. 
+Proses pelatihan LightGBM dimulai dengan membangun pohon keputusan dari data pelatihan, dan setiap iterasi bertujuan untuk mengurangi kesalahan dari model sebelumnya 
+dengan menggunakan gradien untuk mengarahkan perbaikan \cite{b31}.
 
-The preferred spelling of the word ``acknowledgment'' in America is without 
-an ``e'' after the ``g''. Avoid the stilted expression ``one of us (R. B. 
-G.) thanks $\ldots$''. Instead, try ``R. B. G. thanks$\ldots$''. Put sponsor 
-acknowledgments in the unnumbered footnote on the first page.
+\subsection{Ensemble (Stacking)}
 
-\section*{References}
+\textit{Stacking} termasuk dalam kategori \textit{ensemble learning} yang didalamnya terdapat proses tumpukan dari beberapa algoritma klasifikasi tunggal. Dalam penggunaannya, terdapat dua level 
+model pembelajaran yang akan digunakan ketika metode \textit{stacking} diterapkan, yang pertama adalah model pembelajaran level-0 yang di kenal sebagai \textit{base learner}, dan model 
+pembelajaran level-1 yang merupakan \textit{meta-learner}. Model \textit{Stacking} ini menggunakan model XGBoost, LightGBM, dan CatBoost sebagai \textit{base learner}, dan LR sebagai \textit{meta learner} \cite{b32}. 
+Ilustrasi dari proses \textit{stacking} digambarkan melalui ``Fig. ~\ref{stacking}''.
 
-Please number citations consecutively within brackets \cite{b1}. The 
-sentence punctuation follows the bracket \cite{b2}. Refer simply to the reference 
-number, as in \cite{b3}---do not use ``Ref. \cite{b3}'' or ``reference \cite{b3}'' except at 
-the beginning of a sentence: ``Reference \cite{b3} was the first $\ldots$''
+\begin{figure}[htbp]
+    \centerline{\includegraphics[width=\linewidth]{stacking.png}}
+    \caption{Ensemble dengan Stacking}
+    \label{stacking}
+\end{figure}
 
-Number footnotes separately in superscripts. Place the actual footnote at 
-the bottom of the column in which it was cited. Do not put footnotes in the 
-abstract or reference list. Use letters for table footnotes.
+\section{Dataset}
 
-Unless there are six authors or more give all authors' names; do not use 
-``et al.''. Papers that have not been published, even if they have been 
-submitted for publication, should be cited as ``unpublished'' \cite{b4}. Papers 
-that have been accepted for publication should be cited as ``in press'' \cite{b5}. 
-Capitalize only the first word in a paper title, except for proper nouns and 
-element symbols.
+\subsection{Spaceship Dataset}
+Dataset Spaceship Titanic adalah kumpulan data yang memuat informasi tentang penumpang kapal luar angkasa dan keterkaitannya dengan keputusan mereka untuk diangkut ke dimensi lain atau tidak. 
+Tujuan dari dataset ini adalah untuk memprediksi apakah seorang penumpang akan diangkut ke dimensi lain atau tidak.
 
-For papers published in translation journals, please give the English 
-citation first, followed by the original foreign-language citation \cite{b6}.
+Dataset ini menyediakan fitur-fitur untuk melakukan prediksi. \textit{HomePlanet} adalah planet asal penumpang, \textit{CryoSleep} menunjukkan apakah penumpang akan dibekukan atau tidak, 
+VIP menunjukkan apakah penumpang memiliki layanan VIP atau tidak, \textit{RoomService, FoodCourt, shopping mall, Spa, VRDeck} adalah fitur-fitur yang menunjukkan pengeluaran penumpang, 
+\textit{Transported} adalah target class yang menunjukkan apakah penumpang diangkut ke dimensi lain atau tidak.
+
+Dalam dataset ini, fitur-fitur yang digunakan untuk prediksi meliputi \textit{HomePlanet}, \textit{CryoSleep}, VIP, \textit{RoomService, FoodCourt, shopping mall, Spa, VRDeck}, dan \textit{Transported}. Fitur-fitur ini 
+digunakan untuk memprediksi apakah seorang penumpang akan diangkut ke dimensi lain atau tidak. 
+
+Dalam penelitian ini, dataset Spaceship Titanic digunakan untuk memprediksi apakah seorang penumpang akan diangkut ke dimensi lain atau tidak. Dataset ini digunakan untuk mempelajari 
+pola dan hubungan antara fitur-fitur yang digunakan untuk prediksi. Dengan menggunakan dataset ini, penelitian ini dapat membantu dalam meningkatkan akurasi prediksi dan meningkatkan 
+kemampuan sistem dalam memprediksi keputusan penumpang.
+
+\subsection{Bank Churn Dataset}
+Dataset Bank Churn adalah kumpulan data yang memuat informasi tentang nasabah bank dan keterkaitannya dengan keputusan mereka untuk berhenti menggunakan layanan atau produk yang ditawarkan oleh bank tersebut. 
+Tujuan dari dataset ini adalah untuk memprediksi apakah seorang nasabah akan tetap menggunakan akun mereka atau akan menutupnya.
+
+Dataset ini menyediakan fitur-fitur untuk melakukan prediksi. \textit{Id} dan \textit{customerId} adalah dua fitur yang digunakan sebagai identitas dari \textit{customer} yang sifatnya unik. \textit{Surname} adalah nama keluarga dari nasabah, 
+\textit{CreditScore} adalah skor kredit dari nasabah, \textit{Geography} menunjukkan geografi, \textit{Gender} menunjukkan jenis kelamin, \textit{Age} menunjukkan umur, \textit{Tenure} menunjukkan waktu nasabah telah memiliki akun, \textit{Balance} adalah jumlah 
+uang tersimpan dalam akun nasabah, \textit{NumOfProducts} mengacu pada jumlah produk atau layanan perbankan yang dimiliki oleh seorang nasabah, \textit{isActiveMember} mengacu pada status keanggotaan aktif, dan \textit{Estimated Salary} 
+adalah gaji estimasi dari nasabah.
+
+Dalam dataset ini, target kelas yang digunakan adalah \textit{'Exited'}. Pada data \textit{training}, kelas ini memiliki nilai biner, yaitu 1 dan 0 seperti pada ``Fig. ~\ref{churn_distribution}''. Prediksi akan dilakukan terhadap kelas ini dan kalkulasi yang dilakukan adalah 
+mencari probabilitas dari seorang nasabah akan menutup akun menggunakan nilai kontinu. Semakin tinggi nilai nya, maka semakin tinggi kemungkinan orang tersebut akan menutup akun, berlaku sebaliknya untuk nilai 
+probabilitas yang semakin rendah. Melalui data latih, dataset menunjukkan persentase dominan terhadap \textit{Not Exited}. Melalui \textit{heatmap} korelasi fitur kontinu ``Fig. ~\ref{churn_corr}'', tidak ada fitur yang memiliki korelasi yang tinggi. 
+Berdasarkan pengamatan pada \textit{heatmap} ``Fig. ~\ref{churn_nan}'', tidak ada \textit{missing value} ditemukan pada data latih maupun data uji.
+
+\begin{figure}[htbp]
+    \centerline{\includegraphics[width=\linewidth, scale=0.7]{churn_distribution.png}}
+    \caption{Distribusi kelas Bank Churn}
+    \label{churn_distribution}
+\end{figure}
+
+\begin{figure}[htbp]
+    \centerline{\includegraphics[width=\linewidth]{churn_nan.png}}
+    \caption{Nilai NaN Dataset Bank Churn}
+    \label{churn_nan}
+\end{figure}
+
+\begin{figure}[htbp]
+    \centerline{\includegraphics[width=\linewidth, scale=0.5]{churn_corr_heatmap.png}}
+    \caption{Heatmap Fitur Dataset Bank Churn}
+    \label{churn_corr}
+\end{figure}
+
+\subsection{Horse Health Dataset}
+Dataset Predict Health Outcomes of Horses adalah kumpulan data yang memuat informasi tentang kondisi kesehatan kuda dan keterkaitannya 
+dengan hasil akhir kesehatan mereka, seperti apakah mereka akan sembuh, mati, atau di-euthanasia. Tujuan dari dataset ini adalah untuk 
+memprediksi hasil kesehatan kuda berdasarkan berbagai fitur medis yang tersedia.
+
+Fitur-fitur dataset:
+\begin{itemize}
+    \item 'surgery': Apakah kuda tersebut menjalani operasi (yes/no)
+    \item 'age': Usia kuda (adult)
+    \item 'hospital number': Nomor rumah sakit tempat kuda dirawat
+    \item 'rectal temp': Suhu rektal kuda dalam derajat Celcius
+    \item 'pulse': Denyut nadi kuda per menit 
+    \item 'respiratory rate': Laju pernapasan kuda per menit 
+    \item 'temp of extremities': Suhu ekstrimitas ('cool'/'normal'/'code')
+    \item 'peripheral pulse': Denyut nadi perifer ('normal'/'reduced')
+    \item 'mucous membrane': Warna membran mukosa ('pale pink'/'normal pink'/'dark cyanotic')
+    \item 'capillary refill time': Waktu pengisian kembali kapiler ('less 3 sec'/'more 3 sec')
+    \item 'pain': Tingkat rasa sakit ('alert'/'depressed'/'mild pain'/'severe pain'/extreme pain')
+    \item 'peristalsis': Gerakan peristaltik usus ('normal'/'hypomotile'/'hypermotile'/'absent')
+    \item 'abdominal distention': Distensi abdominal (slight/moderate/none)
+    \item 'nasogastric tube': Kehadiran selang nasogastrik (yes/no)
+    \item 'nasogastric reflux': Refluks nasogastrik (yes/no)
+    \item 'nasogastric reflux pH': pH refluks nasogastrik
+    \item 'rectal exam feces': Hasil pemeriksaan rektal (normal/decreased)
+    \item 'abdomen': Kondisi perut (normal/firm/distend small/distend large)
+    \item 'packed cell volume': Volume sel darah terpak (dalam persen)
+    \item 'total protein': Total protein dalam darah (dalam g/dL)
+    \item 'abdomo appearance': Penampakan cairan perut (serosanguious/cloudy)
+    \item 'abdomo protein': Protein dalam cairan perut (dalam g/dL)
+    \item 'surgical lession': Protein dalam cairan perut (dalam g/dL)
+    \item 'lession 1', 'lession 2', 'lession 3': Identifikasi lesi (numerik)
+    \item 'cp data': Data terkair CP (yes/no)
+    \item 'outcome': Hasil akhir kesehatan kuda (lived/died/euthanized)
+\end{itemize}
+
+Statistik dan distribusi fitur dataset Horse Health:
+\begin{itemize}
+    \item Fitur kategorikal seperti \textit{surgery, age, temp of extremities, peripheral pulse, mucousmembrane, capillary refill time, pain, peristalsis, abdominaldistention, nasogastrictube, nasogastricreflux, rectalexamfeces, abdomen, abdomo appearance, surgical lesion, cp data}, dan \textit{outcome} dikodekan menggunakan LabelEncoder.
+    \item Fitur numerik meliputi \textit{hospital number, rectal temp, pulse, respiratory rate, nasogastric reflux pH, packed cell volume, total protein, abdomo protein, lesion 1, lesion 2}, dan \textit{lesion 3}.
+\end{itemize}
+
+\begin{figure}[htbp]
+    \centerline{\includegraphics[width=\linewidth, scale=0.5]{horse_distribution.png}}
+    \caption{Distribusi Outcome Dataset Horse Health}
+    \label{horse_distribution}
+\end{figure}
+
+\begin{figure}[htbp]
+    \centerline{\includegraphics[width=\linewidth, scale=0.5]{horse_feature_description.png}}
+    \caption{Statistik Deskriptif Dataset Horse Health}
+    \label{horse_description}
+\end{figure}
+
+\begin{figure}[htbp]
+    \centerline{\includegraphics[width=\linewidth, scale=0.5]{horse_corr.png}}
+    \caption{Korelasi Fitur Dataset Horse Health}
+    \label{horse_corr}
+\end{figure}
+
+Dataset ini menunjukkan distribusi hasil kesehatan kuda sebagai berikut: \textit{lived} (kuda yang bertahan hidup), \textit{died} (kuda yang meninggal), dan \textit{euthanized} (kuda yang di-euthanasia). 
+Grafik distribusi hasil kesehatan ``Fig. ~\ref{horse_distribution}'' menunjukkan bahwa sebagian besar kuda dalam dataset ini bertahan hidup, dengan proporsi yang lebih kecil meninggal atau di-euthanasia. 
+Analisis korelasi antar fitur ``Fig. ~\ref{horse_corr}'' dalam dataset ini menunjukkan hubungan antara berbagai fitur dan hasil kesehatan. Heatmap korelasi menunjukkan bahwa beberapa fitur memiliki korelasi 
+yang lebih tinggi dengan hasil kesehatan kuda, yang dapat digunakan untuk membangun model prediktif yang lebih akurat.
+
+\subsection{Keep-it-Dry Dataset}
+
+Dataset Keep-it-Dry merepresentasikan hasil dari product testing untuk produk absorben berdasarkan hasil pengukuran dan uji laboratorium tertentu. Setiap produk absorben yang diujikan memiliki 
+\textit{‘product code’} dengan empat buah atribut tetap (\textit{fixated attributes}), yang disimpan pada fitur \textit{‘attribute 0’} hingga \textit{‘attribute 3’}. Tiap \textit{record} pada dataset ini juga memiliki fitur \textit{'loading'}, yang 
+menyatakan banyaknya cairan yang berhasil diserap untuk produk absorben yang diujikan. Hasil pengukuran untuk tiap pengujian berbeda juga tersedia dan direpresentasikan dalam fitur \textit{‘measurement 0’} 
+hingga \textit{‘measurement 17’}. Kelas target dalam dataset ini adalah \textit{'failure'} dengan nilai biner 0 dan 1, yang menyatakan apakah produk tersebut lolos ataupun gagal.
+
+\textit{Training set} pada dataset ini memiliki 26,570 \textit{records} dengan 20,775 \textit{records} untuk proses \textit{submission} dengan kelas \textit{'failure'}=0 menjadi \textit{majority class} ``Fig. ~\ref{kid_distribution}''. Dari 25 fitur yang tersedia, terdapat 3 fitur yang memiliki tipe data \textit{object}: 
+\textit{‘product code’, ‘attribute 0’}  dan \textit{‘attribute 1’}. Melalui peta persebaran nilai NaN ``Fig. ~\ref{kid_nan}'', terdapat 9 fitur tanpa nilai NaN: \textit{‘id’, ‘product code’, ‘loading’, ‘attribute 0’} hingga ‘attribute 3’, serta \textit{‘measurement 0’} hingga \textit{‘measurement 2’}. 
+Melalui \textit{heatmap} korelasi fitur kontinu ``Fig. ~\ref{kid_corr}'', tidak ditemukan adanya fitur dengan korelasi linear yang tinggi.
+
+\begin{figure}[htbp]
+    \centerline{\includegraphics[width=\linewidth, scale=0.5]{KID_Class_Distribution.png}}
+    \caption{Distribusi Kelas Dataset Keep-it-Dry}
+    \label{kid_distribution}
+\end{figure}
+
+\begin{figure}[htbp]
+    \centerline{\includegraphics[width=\linewidth, scale=0.5]{KID_Missing_Values.png}}
+    \caption{Distribusi nilai NaN Dataset Keep-it-Dry}
+    \label{kid_nan}
+\end{figure}
+
+\begin{figure}[htbp]
+    \centerline{\includegraphics[width=\linewidth, scale=0.5]{KID_Continuous_Features_Correlation_Heatmap.png}}
+    \caption{Korelasi Fitur Dataset Keep-it-Dry}
+    \label{kid_corr}
+\end{figure}
+
+\section{Metodologi}
+
+\subsection{Imputasi Data}
+Imputasi data adalah proses mengganti nilai yang hilang dalam dataset dengan nilai yang diperkirakan berdasarkan informasi yang tersedia. 
+Kehilangan data dapat disebabkan oleh berbagai alasan seperti kesalahan pengukuran, pengabaian, atau masalah teknis. Nilai yang hilang dalam dataset bisa mengurangi 
+kualitas analisis dan menyebabkan model \textit{machine learning} menjadi bias jika tidak ditangani dengan benar \cite{b35}. Oleh karena itu, imputasi merupakan 
+langkah penting dalam data preprocessing untuk memastikan bahwa dataset yang digunakan dalam analisis atau pelatihan model adalah representatif dan lengkap.
+
+Dalam penelitian ini, beberapa teknik imputasi data yang digunakan adalah sebagai berikut.
+
+\begin{itemize}
+    \item \textit{Mean Imputation} \\
+    Mengganti nilai yang hilang dengan rata-rata nilai dalam kolom tersebut. Teknik ini sederhana dan sering digunakan, terutama jika data 
+    memiliki distribusi normal. Namun, \textit{mean imputation} bisa memperkecil variasi data dan mengabaikan korelasi antar variabel.
+    \item \textit{Median Imputation} \\
+    Mengganti nilai yang hilang dengan nilai tengah dalam kolom tersebut. Opsi ini lebih tahan terhadap \textit{outlier} dibandingkan \textit{mean imputation}, 
+    sehingga lebih baik digunakan jika data memiliki distribusi yang \textit{skewed}. \textit{Median imputation} juga mempertahankan distribusi data lebih baik daripada \textit{mean imputation}.
+    \item \textit{Mode Imputation} \\
+    Mengganti nilai yang hilang dengan nilai yang paling sering muncul dalam kolom tersebut. Cocok untuk data kategori, karena menggantikan nilai yang hilang 
+    dengan kategori yang paling umum. \textit{Mode imputation} dapat mempertahankan distribusi kategori dalam data, tetapi mungkin tidak ideal untuk data numerik.
+    \item \textit{K-Nearest Neighbors Imputation (KNN Imputation)} \\
+    Menggunakan nilai-nilai dari data yang paling mirip untuk memperkirakan nilai yang hilang. KNN \textit{imputation} mempertimbangkan kedekatan atau kemiripan antara sampel, 
+    sehingga dapat menghasilkan imputasi yang lebih akurat dibandingkan metode sederhana seperti mean atau median. Namun, KNN \textit{imputation} bisa jadi komputasi intensif, terutama 
+    untuk dataset yang besar.
+    \item \textit{Multiple Imputation}
+    Menghasilkan beberapa set nilai yang hilang untuk mencerminkan ketidakpastian yang lebih baik dalam imputasi. Teknik ini menciptakan beberapa dataset lengkap, menganalisis masing-masing, 
+    dan menggabungkan hasilnya untuk memberikan estimasi yang lebih akurat dan tidak bias. \textit{Multiple imputation} menangani ketidakpastian dalam data yang hilang dengan lebih baik dibandingkan metode imputasi tunggal.
+
+\end{itemize}
+
+\subsection{Data Encoding}
+\textit{Data encoding} adalah proses mengubah data kategori menjadi bentuk numerik agar dapat diproses oleh algoritma \textit{machine learning} yang umumnya hanya dapat bekerja dengan data numerik \cite{b36}. 
+Data kategori, seperti jenis kelamin atau status perkawinan, perlu diubah menjadi format yang dapat dipahami oleh model matematis. Tanpa \textit{encoding}, algoritma \textit{machine learning} tidak dapat 
+menggunakan informasi dari fitur kategori, karena mereka mengharapkan input dalam bentuk numerik. \textit{Encoding} sangat penting untuk memastikan bahwa model dapat memahami dan memanfaatkan 
+data kategori dengan benar.
+
+Dalam penelitian ini, beberapa teknik \textit{encoding} yang digunakan adalah sebagai berikut.
+
+\begin{itemize}
+    \item \textit{Label Encoding}: memberikan label numerik untuk setiap kategori dalam fitur. Digunakan saat kategori memiliki urutan tertentu (ordinal).
+    Meskipun sederhana, label encoding dapat menimbulkan masalah jika kategori tidak memiliki hubungan ordinal, karena model mungkin akan menafsirkan urutan numerik sebagai representasi hubungan ordinal.
+    \item \textit{One-Hot Encoding}: membuat kolom biner terpisah untuk setiap kategori unik dalam fitur. Menghindari memberikan urutan yang tidak diinginkan pada data kategori. 
+    \textit{One-hot encoding} sangat efektif untuk menghindari masalah yang ditimbulkan oleh \textit{label encoding} pada data non-ordinal. Namun, metode ini dapat menyebabkan peningkatan dimensi data yang signifikan jika jumlah kategori banyak.
+    \item \textit{Ordinal Encoding}: mengurutkan kategori dalam fitur dan memberikan nilai numerik berdasarkan urutan tersebut. Cocok untuk data ordinal dimana ada urutan yang jelas di antara kategori, seperti \textit{rating} (buruk, cukup, baik, sangat baik). 
+    \item \textit{Binary Encoding}: kombinasi dari \textit{label encoding} dan \textit{one-hot encoding} yang menghasilkan representasi biner. Teknik ini mengurangi dimensi data dibandingkan dengan \textit{one-hot encoding} dan masih memberikan representasi yang baik untuk data kategori.
+\end{itemize}
+
+\subsection{Data Scaling}
+\textit{Data scaling} adalah proses menormalkan atau mengubah skala data agar semua fitur berada dalam rentang yang sama, biasanya 0 hingga 1 atau -1 hingga 1. Hal ini penting agar algoritma \textit{machine learning} tidak bias 
+terhadap fitur dengan skala yang lebih besar \cite{b37}. Misalnya, fitur yang diukur dalam ribuan unit dapat mendominasi fitur lain yang diukur dalam skala yang lebih kecil, sehingga mempengaruhi kinerja model. 
+\textit{Data scaling} membantu dalam mempercepat konvergensi model selama pelatihan dan meningkatkan performa prediksi.
+
+Dalam penelitian ini, beberapa teknik \textit{data scaling} yang digunakan adalah sebagai berikut.
+
+\begin{itemize}
+    \item \textit{Standard Scaler}: adalah menormalkan data sehingga memiliki mean 0 dan standar deviasi 1. Cocok untuk data yang mendekati distribusi normal. 
+    Dengan \textit{Standard Scaler}, kita memastikan bahwa setiap fitur memiliki kontribusi yang seimbang dalam model. \textit{Standard Scaler} menjaga hubungan linear antara fitur 
+    dan memungkinkan model untuk lebih efektif mempelajari pola dalam data.
+    \item \textit{MinMax Scaler}: adalah mengubah skala data sehingga berada dalam rentang antara 0 dan 1. Cocok untuk data yang tidak memiliki \textit{outlier} ekstrem. 
+    \textit{MinMax Scaler} mempertahankan hubungan proporsional antara nilai asli dan nilai skala.
+    \item \textit{Robust Scaler}: mengurangi pengaruh \textit{outlier} dengan menggunakan median dan \textit{interquartile range}. 
+    Cocok untuk data dengan \textit{outlier} yang signifikan. \textit{Robust Scaler} memastikan bahwa \textit{scaling} tidak dipengaruhi oleh nilai ekstrim 
+    yang dapat mendistorsi distribusi data. \textit{Robust Scaler} menjaga robustness model terhadap \textit{outlier}.
+\end{itemize}
+
+\subsection{Imbalance Handling}
+
+\textit{Imbalance handling} adalah proses mengatasi ketidakseimbangan kelas dalam dataset, dimana jumlah sampel pada satu kelas jauh lebih banyak 
+dibandingkan kelas lainnya. Ketidakseimbangan ini dapat menyebabkan model \textit{machine learning} bias terhadap kelas mayoritas dan mengabaikan kelas minoritas \cite{b38}, 
+sehingga menghasilkan prediksi yang tidak akurat. Ketidakseimbangan kelas dapat mengurangi kemampuan model untuk mendeteksi kelas minoritas yang penting. Opsi yang tersedia untuk 
+\textit{imbalance handling} yang digunakan pada penelitian ini adalah sebagai berikut.
+
+\begin{itemize}
+    \item \textit{Oversampling}: menambah jumlah sampel dari kelas minoritas. Teknik ini termasuk ROS (\textit{Random Over Sampler}) maupun teknik seperti SMOTE (\textit{Synthetic Minority Over-sampling Technique}), 
+    yang menciptakan sampel baru dari kelas minoritas dengan menginterpolasi antara sampel yang ada. 
+    \textit{Oversampling} dapat meningkatkan representasi kelas minoritas dalam dataset. Namun, \textit{oversampling} dapat menyebabkan 
+    \textit{overfitting} jika sampel yang baru diciptakan terlalu mirip dengan yang sudah ada.
+    \item \textit{Undersampling}: mengurangi jumlah sampel dari kelas mayoritas, seperti dengan menggunakan RUS (\textit{Random Under Sampler}). 
+    Teknik ini menghapus sebagian sampel dari kelas mayoritas untuk mencapai keseimbangan. Meskipun dapat membantu mengatasi ketidakseimbangan, 
+    \textit{undersampling} berisiko menghilangkan informasi penting dari kelas mayoritas. \textit{Undersampling} membantu dalam mengurangi ukuran dataset dan mempercepat 
+    proses pelatihan.
+    \item \textit{Hybrid Methods}: menggabungkan \textit{oversampling} dan \textit{undersampling} untuk mendapatkan keseimbangan yang lebih baik. 
+    \textit{Hybrid methods} memanfaatkan kelebihan dari kedua pendekatan untuk menciptakan dataset yang lebih seimbang. \textit{Hybrid methods} dapat 
+    mengurangi risiko overfitting dan underfitting yang mungkin terjadi pada \textit{oversampling} atau \textit{undersampling} tunggal.
+\end{itemize}
+
+\subsection{Principal Component Analysis (PCA)}
+
+\textit{Principal Component Analysis} (PCA) adalah teknik pengurangan dimensi yang mengubah data ke dalam set baru dari variabel (\textit{principal components}) yang mempertahankan 
+variabilitas maksimum dalam data. PCA membantu dalam mengurangi jumlah fitur dan mengatasi masalah multikolinearitas. Dalam PCA, data diubah menjadi 
+komponen utama yang merupakan kombinasi linear dari fitur asli dengan varian terbesar. Komponen utama ini mempertahankan 
+sebanyak mungkin informasi dari data asli. PCA mengidentifikasi arah variabilitas maksimum dalam data dan mentransformasikannya menjadi 
+set baru dari fitur yang tidak berkorelasi.
+
+Tujuan dari PCA adalah mengurangi jumlah fitur dalam dataset, mengatasi masalah multikolinearitas, meningkatkan efisiensi komputasi, dan meningkatkan performa model 
+\textit{machine learning} \cite{b39}. Dengan mengurangi dimensi data, PCA membantu dalam visualisasi data, mempercepat waktu pelatihan model, dan mengurangi risiko \textit{overfitting}. 
+PCA juga membantu dalam mengidentifikasi fitur yang paling penting dan mengabaikan \textit{noise} dalam data. Transformasi data menggunakan PCA memungkinkan model untuk fokus pada 
+komponen yang paling signifikan dan mengurangi beban komputasi.
+
+\subsection{Optimalisasi Hyperparameter: GridSearchCV}
+
+Akurasi dari suatu model dapat ditingkatkan dengan memanfaatkan GridSearchCV \cite{b40}.  GridSearchCV adalah sebuah kelas yang disediakan oleh \textit{framework} scikit-learning. 
+Tujuan dari GridSearchCV adalah untuk menentukan kombinasi \textit{hyperparameter} yang menghasilkan nilai terbaik \cite{b41}. Grid search bekerja dengan cara melakukan seleksi terhadap model 
+dan \textit{hyperparameter} terbaik. Untuk memperoleh model dan \textit{hyperparameter} terbaik, teknik ini akan melakukan pengujian terhadap 
+seluruh kombinasi \textit{hyperparameter} dari \textit{dictionary} yang telah didefinisikan. Untuk setiap kombinasi yang berhasil dibangkitkan, akan dilakukan 
+validasi terhadap model klasifikasi dengan menggunakan \textit{k-fold  cross-validation} (CV). Setiap \textit{k-fold cross-validation} dari model akan 
+menghasilkan evaluation index yang akan menjadi acuan dalam menentukan model klasifikasi terbaik \cite{b42}.
+
+\begin{equation}
+    \text{E} = \frac{1}{K} \sum_{k=1}^{K} E_k \label{gridsearch_eq}
+\end{equation}
+
+Setiap tahapan \textit{K-fold cross-validation} dilakukan dengan melakukan repetisi sebanyak K kali pada data yang terbagi menjadi K bagian. Pada setiap perulangan 1/k dataset 
+digunakan sebagai data uji dan sisanya akan bertindak sebagai data latih \cite{b43}. \textit{K-fold cross-validation} akan menghitung rata-rata dari kalkulasi yang telah dilakukan dan menjadikannya sebagai 
+index performansi dari model klasifikasi. Setelah itu, parameter klasifikasi diubah ke kombinasi lainnya dan proses validasi dilakukan kembali. Tahapan ini akan terus berlanjut dan setiap iterasi akan menghasilkan 
+akurasi model. Persamaan dari \textit{K-fold cross-validation} dapat dilihat pada ``\eqref{gridsearch_eq}''. Diagram alir dari proses GridSearchCV dapat dilihat pada ``Fig. ~\ref{gridsearch_flow}''.
+
+\begin{figure}[htbp]
+    \centerline{\includegraphics[scale=0.5]{gridsearch.png}}
+    \caption{Diagram Alir GridSearchCV}
+    \label{gridsearch_flow}
+\end{figure}
+
+\subsection{Optimalisasi Hyperparameter: Optuna}
+
+Optuna adalah sebuah pustaka yang melakukan optimasi terhadap \textit{hyperparameter tuning}. 
+Untuk menemukan \textit{hyperparameter} terbaik terkadang, melakukan proses training dan evaluasi secara repetitif hanya akan
+membuang waktu dan tenaga \cite{b44}. Oleh karena itu, Optuna berperan untuk melakukan automasi terhadap optimasi \textit{hyperparameter}.
+
+Optuna menggunakan landasan utama seperti fungsi objektif yang digunakan sebagai penentu metrik yang ingin dioptimalkan, 
+ruang pencarian yang mendefinisikan rentang valid atau kumpulan nilai diskrit dari setiap parameter, trial yang mengevaluasi 
+fungsi objektif dengan \textit{hyperparameter} tertentu, dan sampler yang menentukan parameter baru yang digunakan.
+
+Langkah-langkah Optuna dalam memilih \textit{hyperparameter} yang optimal terdiri dari: Penentuan fungsi objektif, 
+pemilihan sampler, Iterasi dan Optimasi \cite{b45}. Prosedur dasar Optuna dapat dilihat pada ``Fig. ~\ref{optuna_flow}''.
+
+\begin{figure}[htbp]
+    \centerline{\includegraphics[scale=0.5]{optuna.png}}
+    \caption{Diagram Alir Optuna}
+    \label{optuna_flow}
+\end{figure}
+
+\subsection{Evaluasi Model}
+
+Pada pengujian yang dilakukan di artikel ini, evaluasi model dilakukan dengan menggunakan metode tabulasi silang (\textit{Confusion Matrix}). 
+Proses evaluasi ini adalah dengan menyusun matriks yang berisi kelas data asli pada barisnya dan kelas data hasil prediksi pada kolomnya \cite{b46}. 
+Ilustrasi \textit{Confusion Matrix} dapat dilihat pada ``Fig. ~\ref{confusionmatrix}''.
+
+\begin{figure}[htbp]
+    \centerline{\includegraphics[scale=0.5]{confusionmatrix.png}}
+    \caption{Confusion Matrix}
+    \label{confusionmatrix}
+\end{figure}
+
+Pada ``Fig. ~\ref{confusionmatrix}'', terdapat 4 lokasi grid dengan kondisi yang berbeda. \textit{True Negative} menandakan jumlah prediksi 
+negatif yang berhasil diprediksi secara benar. \textit{False Positive} menandakan jumlah \textit{actual negative} yang salah diprediksi sebagai positif. 
+\textit{False Negative} menandakan jumlah \textit{actual positive} yang salah diprediksi sebagai \textit{negative} \cite{b47}.
+
+Selain itu, digunakan beberapa metode \textit{scoring} sebagai berikut.
+
+\begin{itemize}
+    \item \textbf{Recall} \\
+    \textit{Recall} (perolehan) berhubungan dengan kemampuan suatu sistem temu balik dalam menemukan dokumen yang relevan. 
+    Hal ini berarti perolehan (\textit{recall}) adalah bagian dari proses temu balik informasi yang dapat digunakan sebagai alat ukur tingkat efektivitas suatu sistem temu balik informasi \cite{b48}. 
+    Rumus \textit{Recall} dapat dilihat pada ``\eqref{recall}''. 
+    \item \textbf{Precision} \\
+    \textit{Precision} adalah jumlah kelompok dokumen relevan dari total jumlah dokumen yang ditemukan oleh sistem. 
+    Berdasarkan penjelasan tersebut, rumus \textit{precision} dapat dilihat pada ``\eqref{precision}''.
+    \item \textbf{Accuracy} \\
+    \textit{Accuracy} adalah kedekatan antara nilai prediksi dengan nilai aktual. Dalam memilih \textit{accuracy}, 
+    seluruh komponen terlibat. Rumus \textit{accuracy} dapat dilihat pada ``\eqref{accuracy}''.
+    \item F-Measure (F1-Score) \\
+    Metrik ini menggabungkan precision dan recall, memberikan gambaran menyeluruh tentang kemampuan model dalam 
+    mengidentifikasi contoh positif secara akurat dan meminimalkan false positive. Rumus F-Measure dapat dilihat 
+    pada ``\eqref{f1}''.
+    \item \textbf{AUC-ROC} \\
+    AUC-ROC adalah metrik evaluasi yang mengukur kemampuan model klasifikasi dalam membedakan antara kelas positif dan negatif. Metrik ini dihitung dengan 
+    menghitung luas area di bawah kurva ROC (\textit{Receiver Operating Characteristic}). Kurva ROC diplotkan dengan \textit{True Positive Rate} (TPR) pada sumbu-y dan 
+    \textit{False Positive Rate} (FPR) pada sumbu-x. AUC = 1.0 berarti Performa model sempurna, semua contoh positif diidentifikasi dengan benar tanpa false positive. 
+    AUC = 0.5 berarti performa model tidak lebih baik dari menebak secara acak. Nilai antara 0.5 dan 1.0 berarti menunjukkan performa model di antara acak dan sempurna \cite{b48}.
+    
+    AUC tidak memberikan informasi tentang presisi dan recall secara langsung, sehingga perlu dipertimbangkan metrik lain untuk mengukur performa model 
+    secara komprehensif. AUC dapat sensitif terhadap outlier dalam data, sehingga perlu dilakukan outlier detection sebelum menghitung AUC \cite{b49}.
+
+    \item \textbf{Cross-Validation (CV)} \\
+    \textit{Cross-Validation} (CV) adalah teknik evaluasi model yang membagi data menjadi beberapa subset (fold) dan melatih model beberapa kali dengan menggunakan subset yang berbeda sebagai data 
+    latih dan data uji. Tujuannya adalah untuk mendapatkan perkiraan performa model yang lebih akurat dan stabil. \textit{K-fold Cross-Validation} membagi data menjadi k subset, dan model dilatih 
+    k kali dengan menggunakan k-1 subset sebagai data latih dan 1 subset sebagai data uji. \textit{Leave-one-out Cross-Validation} membagi data menjadi n subset, di mana n adalah jumlah data. 
+    Model dilatih n kali dengan menggunakan n-1 subset sebagai data latih dan 1 data sebagai data uji. \textit{Stratified Cross-Validation} membagi data menjadi subset berdasarkan kelasnya, 
+    dan CV dilakukan dengan memastikan proporsi kelas pada data latih dan data uji sama dengan proporsi kelas pada data keseluruhan. \cite{b50}. 
+    CV memiliki kelebihan dapat digunakan untuk memperkirakan performa model yang lebih akurat dan stabil, memilih model terbaik, serta membantu dalam proses pemilihan 
+    parameter terbaik. Kekurangan dari CV adalah waktu komputasi yang cukup lama.
+\end{itemize}
+
+\begin{equation}
+    Recall = \frac{TP}{TP+FN} \label{recall}
+\end{equation}
+
+\begin{equation}
+    Precision = \frac{TP}{TP+FP} \label{precision}
+\end{equation}
+
+\begin{equation}
+    Accuracy = \frac{TP + TN}{TP+FP+TN+FN} \label{accuracy}
+\end{equation}
+
+\begin{equation}
+    F1 = 2.\frac{ Precision * Recall}{Precision \times Recall} \label{f1}
+\end{equation}
+
+\section{Hasil dan Diskusi}
+\subsection{Dataset Spaceship}
+
+Pada tahap pemrosesan awal, yang dilakukan adalah menghapus kolom yang tidak relevan untuk mengurangi kompleksitas data, kemudian melakukan one-hot encoding 
+dan label encoding pada kolom kategorikal. Kolom boolean diubah menjadi tipe data integer untuk memastikan konsistensi format data. Selanjutnya, melakukan normalisasi Z-Score pada variabel 
+kontinu untuk menstandarkan data sehingga setiap fitur memiliki mean nol dan standar deviasi satu, memastikan tidak ada fitur yang mendominasi karena skala yang berbeda. Scaling data dilakukan dengan menggunakan 
+Standard Scaling (ST). dari tahapan tersebut terbentuk 2 clean dataset dengan teknik pemrosesan awal yang yang akan diujikan pada tahap dataset selection untuk masing masing model.
+
+Pada percobaan menggunakan model klasifikasi KNN, diperoleh akurasi sebesar 0.52 dengan menggunakan PCA (Component Analysis) dan k=3. Namun ketika menambahkan beberapa parameter 
+(Knn\_\_n\_neighbors, Knn\_\_weights, knn\_\_metric) dengan gridsearchCV dan menggunakan StratifiedKFold dengan 10 fold menghasilkan skor sebesar 0.78. 
+Ini memperlihatkan bahwa gabungan dari gridsearchCV dan stratifiedKFold menghasilkan kombinasi yang baik dalam meningkatkan performa model.
+
+Percobaan dengan model linear SVC, diperoleh skor sebesar 0.50 dengan menggunakan Z-score normalization dan parameter c = 47.
+Hasil ini menunjukkan bahwa model SVM tersebut kurang cocok dalam dataset ini.
+
+Pada percobaan dengan model LightGBM Classifier (Gradient Boosting Machine) menggunakan standard scaler untuk scaling, hyperparameter tuning dengan parameter  
+n\_estimators, max\_depth, learning\_rate, subsample, colsample\_bytree pada gridsearchCV, dan menggunakan metode cross-validation menghasilkan kombinasi 
+yang baik dan menghasilkan skor 0.79541. Namun ketika menggunakan StratifiedKFold dengan 10 fold dalam gridsearchCV menghasilkan performa model yang lebih baik 
+dan menghasilkan cross-validation score 0.81, accuracy on test 0.799 dan skor ketika disubmit pada kaggle sebesar 0.80640 ini merupakan skor tertinggi dari semua model untuk dataset ini.
+
+Pada percobaan dengan ensemble model menggunakan stacking classifier dengan algoritma XGBClassifier, CatBoostClassifier, LGBMClassifier sebagai base modelnnya, dan logistic regression sebagai final modelnya. 
+Standarisasi data dengan standard scaler dan StratifiedKFold dengan 10 fold untuk menangani data yang tidak seimbang pada cross validasi. Kemudian optimasi parameter dilakukan menggunakan gridsearchCV dengan berbagai 
+kombinasi parameter dari base model dan meta model digunakan untuk mencari konfigurasi yang memberikan akurasi terbaik, dan memberikan nilai akurasi 0.801 dan skor 0.797 pada Kaggle. Tidak lebih baik dari model lightgbm sendiri, 
+mungkin terdapat overfitting pada model ensemble ini.
+
+\begin{figure}[htbp]
+    \centerline{\includegraphics[scale=0.5]{spaceship_log.png}}
+    \caption{Log Submission Dataset Spaceship}
+    \label{spaceship_log}
+\end{figure}
+
+Pada ``Fig. ~\ref{spaceship_log}'', dapat dilakukan inferensi jika model klasifikasi berbasis tree seperti LGBMClassifier, CatBoostClassifier, XGB memiliki performa yang lebih baik. 
+Model-model tersebut diperlakukan sama dengan standard scaler dan menggunakan gridsearch untuk hyperparameter tuning dan StratifiedKFold, yang membedakan hanya pada bagian classifiernya saja. 
+Untuk algoritma KNNClassifier, proses training dengan menggunakan PCA cenderung memperoleh hasil yang lebih baik. Dalam klasifikasi dataset Spaceship Titanic, model 
+LightGBM dengan dengan data hasil pemrosesan awal menggunakan standard scaler memberikan performa paling optimal jika dibandingkan dengan algoritma klasifikasi lainnya.
+
+\subsection{Dataset Bank Churn}
+Pemrosesan awal dataset Bank Churn dilakukan dengan melakukan tiga tahapan utama: scaling, encoding, dan feature engineering. Tahapan imputasi tidak dilakukan karena dataset tidak memiliki missing value. 
+Scaling data dilakukan dengan menggunakan standard scaling (ST). Encoding pada dataset menggunakan one-hot encoding pada fitur Geography dan Gender. Tahap akhir, dilakukan proses feature engineering pada dataset surname. 
+Dari proses tersebut, didapatkan sebuah clean dataset dengan tipe data numerik yang akan diujikan pada beberapa model.
+
+Pada percobaan menggunakan model klasifikasi Gaussian Naive Bayes (GNBClassifier), diperoleh akurasi sebesar 0.80 dengan menggunakan metode evaluasi cross-validation. Ketika menambahkan Principal Component Analysis (PCA) dengan nilai 
+n\_components = 10, diperoleh akurasi sebesar 0.81. Penggunaan PCA memperlihatkan nilai akurasi yang sedikit lebih baik pada model ini. 
+
+Pada percobaan menggunakan model Gradient Boost Algorithm (XGBClassifier), dengan nilai PCA yang sama, diperoleh hasil  evaluasi 0.860. Ketika n\_components = 13, nilai evaluasi meningkat menjadi 0.865. 
+Berdasarkan percobaan ini, dapat disimpulkan bahwa PCA dengan n\_components yang lebih sedikit kurang relevan digunakan dalam XGBClassifier. Untuk meningkatkan performa, model ini ditambahkan 
+hyperparameter tuning dengan menggunakan gridsearchCV. Hasilnya nilai evaluasi yang diperoleh adalah sebesar 0.868. Penggunaan hyperparameter yang kurang cocok pada model ini adalah subsample karena dapat berpengaruh pada jumlah sampel dalam pelatihan.
+
+Model KNN menggunakan PCA n\_components=0.1. Pada model ini, nilai K yang digunakan adalah 20 dan parameter yang digunakan adalah weights dan metrics. 
+Dengan metric ROC-AUC, diperoleh nilai evaluasi 0.87, sedangkan dengan gridsearch diperoleh akurasi 0.85. Model KNN menunjukkan parameter weight berupa distance dan metrics. Model KNN dengan manhattan distance 
+menghasilkan nilai akurasi yang lebih baik.
+
+LBGMClassifier menghasilkan nilai relatif lebih tinggi dibandingkan dengan model lainnya untuk dataset ini. Model ini menggunakan gridsearch dengan parameter 
+n\_estimators, learning\_rate, dan max\_depth. Penggunaan parameter subsample awalnya digunakan, akan tetapi hasil lebih baik ketika tidak menggunakan sub sample. 
+Evaluasi dilakukan dengan ROC-AUC dan menghasilkan nilai evaluasi 0.90 dan evaluasi menggunakan randomized search diperoleh 0.898, dari hasil gridsearch, f1-score yang 
+diperoleh sebesar 0.87 dan cross-validation menghasilkan skor 0.899.
+
+Penggunaan Model CatBoostClassifier menghasilkan nilai evaluasi yang serupa dengan LGBMClassifier.. Model ini menggunakan GridSearchCV dengan parameter iterations, 
+learning\_rate, depth, l2\_leaf\_reg, border\_count, dan loss\_function. Evaluasi dilakukan dengan menggunakan ROC-AUC dan cross-validation. Evaluasi menggunakan ROC-AUC 
+menghasilkan skor sebesar 0.90, sedangkan dengan menggunakan cross-validation diperoleh skor sebesar 0.899.
+
+\begin{figure}[htbp]
+    \centerline{\includegraphics[scale=0.5]{churn_log.png}}
+    \caption{Log Submission Dataset Bank Churn}
+    \label{churn_log}
+\end{figure}
+
+Pada ``Fig. ~\ref{churn_log}'', dapat dilakukan inferensi jika model klasifikasi berbasis tree seperti LGBMClassifier dan CatBoostClassifier memiliki performa yang lebih baik. Untuk algoritma klasifikasi 
+GaussianNB dan KNNClassifier, proses training dengan menggunakan PCA cenderung memperoleh hasil yang lebih baik. Dalam klasifikasi dataset Bank Churn, model CatBoostClassifier dengan dengan data hasil pemrosesan awal 
+menggunakan min-max scaling (MM) memberikan performa paling optimal jika dibandingkan dengan algoritma klasifikasi lainnya.
+
+\subsection{Dataset Horse Health}
+Pada tahap preprocessing, yang dilakukan adalah beberapa langkah preprocessing dan feature engineering. Pertama, beberapa kolom kategorikal diencoding menggunakan LabelEncoder dan OneHotEncoder untuk mengubah nilai kategorikal menjadi numerik. 
+Nilai tertentu dalam kolom seperti "pain", "peristalsis", "rectal\_exam\_feces", dan "nasogastric\_reflux" diganti untuk menyederhanakan kategori. Selanjutnya, nilai yang hilang dalam beberapa kolom diisi dengan nilai default dan di-mapping ke nilai numerik yang sesuai. 
+Kolom "lesion\_3" dihapus karena dianggap tidak diperlukan. Feature engineering dilakukan dengan mengubah kolom "lesion\_2" menjadi biner dan membuat fitur baru "abs\_rectal\_temp" sebagai nilai absolut dari selisih antara "rectal\_temp" dan 37.8, kemudian kolom 
+"rectal\_temp" dihapus. Langkah-langkah ini dilakukan untuk memastikan data dalam format yang sesuai untuk digunakan dalam model machine learning, dengan menangani nilai yang hilang, mengubah fitur kategorikal menjadi numerik, dan melakukan features engineering untuk meningkatkan kualitas data.
+
+Setelah tahap preprocessing, setiap algoritma dalam model machine learning mengalami serangkaian langkah yang berbeda untuk mencapai performa terbaiknya. Algoritma LightGBM memanfaatkan teknik SMOTE untuk menangani ketidakseimbangan kelas sebelum melakukan pemodelan, 
+awalnya mencapai akurasi sebesar 0.79. Setelah optimasi hyperparameter menggunakan GridSearch yang menghasilkan parameter terbaik {'learning\_rate': 0.2, 'min\_child\_samples': 20, 'n\_estimators': 500, 'num\_leaves': 70}, akurasi meningkat menjadi 0.81. 
+CatBoost menggunakan class weights untuk menangani ketidakseimbangan kelas, mencapai akurasi 0.72 tanpa optimasi tambahan. RandomForest juga menggunakan class weights dengan akurasi awal 0.72, tetapi setelah optimasi hyperparameter 
+dengan GridSearchCV, akurasi sedikit naik menjadi 0.73 dengan parameter terbaik {'bootstrap': True, 'max\_depth': 10, 'min\_samples\_leaf': 1, 'min\_samples\_split': 2, 'n\_estimators': 100}
+
+Sebelum pemodelan dengan SVM, data dinormalisasi menggunakan MinMaxScaler, menghasilkan akurasi awal sebesar 0.49, menunjukkan bahwa normalisasi saja tidak cukup untuk meningkatkan performa model ini. XGBoost, seperti LightGBM, menggunakan SMOTE untuk menangani 
+ketidakseimbangan kelas dan mencapai akurasi awal sebesar 0.77. Setelah optimasi hyperparameter menggunakan GridSearchCV dengan parameter terbaik {'colsample\_bytree': 0.3, 'learning\_rate': 0.2, 'max\_depth': 7, 'n\_estimators': 200}, akurasi meningkat menjadi 0.79. 
+Decision Tree menggunakan MinMaxScaler untuk normalisasi dan class weights, mencapai akurasi awal 0.57. Setelah optimasi hyperparameter menggunakan GridSearchCV dengan parameter terbaik {'criterion': 'gini', 'max\_depth': None, 'min\_samples\_leaf': 10, 'min\_samples\_split': 2}, 
+akurasi meningkat menjadi 0.64.
+
+K-Nearest Neighbors (KNN) menggunakan MinMaxScaler untuk normalisasi dan SMOTE untuk menangani ketidakseimbangan kelas, mencapai akurasi awal sebesar 0.63. Setelah optimasi hyperparameter menggunakan GridSearchCV dengan parameter terbaik 
+{'metric': 'manhattan', 'n\_neighbors': 3, 'weights': 'distance'}, akurasi sedikit meningkat menjadi 0.64. Naive Bayes menggunakan StandardScaler untuk standarisasi data dan SMOTE sebelum pemodelan, 
+menghasilkan akurasi awal sebesar 0.62. Setelah optimasi hyperparameter menggunakan GridSearchCV dengan parameter terbaik {'var\_smoothing': 1e-05}, akurasi berada di angka 0.68. Nilai ini dapat dilihat pada ``Fig. ~\ref{horse_log}''
+
+\begin{figure}[htbp]
+    \centerline{\includegraphics[scale=0.4]{horse_log.png}}
+    \caption{Log Submission Dataset Horse Health}
+    \label{horse_log}
+\end{figure}
+
+\subsection{Dataset Keep-it-Dry}
+
+Pemrosesan awal dataset Keep-it-Dry dilakukan dengan melakukan tiga tahapan utama: imputasi, scaling dan encoding, serta imbalance handling. Pada tahapan imputasi, digunakan dua teknik imputasi dengan agregasi data berdasarkan product\_code: K-Nearest Neighbour Imputation (KI) dan Iterative Imputation (II). 
+Proses scaling untuk data kontinu dengan menggunakan min-max scaling (MM), standard scaling (ST) dan robust scaling (RO) dan ketiganya menggunakan one-hot encoding. Proses imbalance handling dilakukan dengan teknik Random Over Sampler (ROS),
+Random Under Sampler (RUS), SMOTE, SMOTENC, dan ADASYN. Dengan kombinasi terbentuk 16 clean dataset dengan beragam teknik pemrosesan awal yang akan diujikan pada tahap 
+dataset selection untuk masing-masing model. Untuk setiap model yang digunakan, akan dilakukan dataset selection dengan melakukan testing ke-16 
+clean dataset dengan menggunakan base model dengan penilaian berdasarkan F1-score.
+
+\begin{figure}[htbp]
+    \centerline{\includegraphics[width=\linewidth]{KID_Dataset_Selection.png}}
+    \caption{Dataset Selection untuk Dataset Keep-it-Dry}
+    \label{kid_datasetselection}
+\end{figure}
+
+Berdasarkan hasil dari dataset selection untuk berbagai model ``Fig. ~\ref{kid_datasetselection}'', teknik imbalance handling dengan SMOTE, SMOTENC, dan ADASYN (kode: \_*\_*smotenc\_1, \_*\_*smote, dan \_*\_*adasyn) 
+memiliki performa yang lebih baik dalam proses klasifikasi pada training set dengan nilai F1-score yang tinggi jika dibandingkan dengan imbalance handling dengan ROS ataupun RUS 
+(kode: \_*\_*ros dan \_*\_*rus). Akan tetapi, model yang dilatih dengan data resampling SMOTE, SMOTENC, dan ADASYN memberikan performa generalisasi yang jauh lebih buruk dari model yang dilatih dengan data 
+resampling ROS dan RUS pada submission dataset. Oleh karenanya, dataset yang digunakan dalam proses hyperparameter tuning dan pelatihan model akan menggunakan dataset hasil resampling ROS atau RUS dengan nilai 
+F1-score terbaik. Terlihat pula jika tree-based classifier seperti LGBMClassifier dan XGBClassifier memiliki rata-rata testing F1-score untuk proses dataset selection yang lebih baik.
+
+Dari hasil data selection, selanjutnya adalah proses training dengan dataset yang menawarkan F1-score tertinggi. Sebagai bahan komparasi lanjutan, dilakukan pula training dengan dataset hasil resample ROS dan RUS. 
+Proses Principal Component Analysis (PCA) diaplikasikan untuk meningkatkan performa generalisasi model. PCA dilakukan dengan menggunakan nilai variabel 
+‘n\_components’ yang optimal untuk masing-masing base model dengan penilaian F1-score secara iteratif untuk rentang nilai n\_components [10, 23]. Proses roses training dijalankan bersamaan dengan proses 
+hyperparameter tuning dengan validation data sebesar 75\% dari total training data. Untuk meningkatkan performa generalisasi model pada unseen data, digunakan pula 
+cross-validation dengan folds sebanyak 5. Dengan best estimator yang didapatkan melalui hyperparameter tuning dengan cross-validation ini, dilakukan prediksi data submission.
+
+\begin{figure}[htbp]
+    \centerline{\includegraphics[scale=0.4]{kid_log.png}}
+    \caption{Log Submission Dataset Keep-it-Dry}
+    \label{kid_log}
+\end{figure}
+
+Terlihat pada ``Fig. ~\ref{kid_log}'', hasil akurasi pada data submission aktual menandakan adanya perbedaan antara testing F1-score dengan actual score. Model klasifikasi berbasis tree seperti XGBClassifier dan LGBMClassifier 
+mengindikasikan adanya overfit pada data submission, bahkan setelah dilakukan hyperparameter tuning dengan cross-validation. Melalui retraining dan resubmission menggunakan dataset dengan testing F1-score yang lebih rendah (RUS-resampled), 
+XGBClassifier dan LGBMClassifier justru memberikan hasil akurasi yang lebih baik pada data submission. Di sisi lain, model klasifikasi linear dengan regularisasi L2 seperti RidgeClassifier (RC)  dan LogisticRegression (LR) serta kernelized 
+Linear SVM Classifier (LinearSVC), dengan testing F1-score yang lebih buruk dibandingkan XGBClassifier dan LGBMClassifier, mampu memberikan actual score data submission yang lebih baik. Hal yang sama juga berlaku untuk model klasifikasi Gaussian Naive-Bayes 
+(GaussianNB) dan K-Nearest Neighbors (KNNClassifier). Dari hasil submission, terlihat jika model RC, LR, LinearSVC, GaussianNB dan KNNClassifier yang dilatih dengan dataset ROS-resampled memberikan performa aktual yang lebih baik pada data submission jika 
+dibandingkan dengan dataset hasil synthetic resampling (SMOTE/SMOTENC/ADASYN).
+
+Dari ``Fig. ~\ref{kid_log}'', dapat dilakukan inferensi jika model klasifikasi berbasis tree mampu memberikan performa yang lebih baik dengan melakukan training pada data dengan RUS-resampling dan PCA, membantu mengurangi dampak overfitting pada unseen data. 
+Untuk algoritma klasifikasi RC, LR, LinearSVC, GaussianNB dan KNNClassifier, proses training pada data dengan ROS-resampling dan PCA memberikan performa yang lebih baik secara keseluruhan jika dibandingkan dengan algoritma klasifikasi berbasis tree. 
+Dalam klasifikasi dataset Keep-it-Dry, model LinearSVC dengan hyperparameter {'C': 4.641588833612777, 'loss': 'squared\_hinge', 'penalty': 'l2'} dengan data hasil pemrosesan awal menggunakan robust scaling (RO) dan ROS-resampling memberikan performa paling optimal 
+jika dibandingkan dengan algoritma klasifikasi lainnya. Dengan teknik pemrosesan awal yang sama, RC dan LR dengan hyperparameter tuning menggunakan Grid Search dan Cross-Validation juga memberikan performa yang baik setelah LinearSVC.
+
+\section{Simpulan}
+Pada Proyek Akhir  ini, kami mengeksplorasi sejumlah teknik untuk menangani ketidakseimbangan kelas dan proses resampling data dengan tujuan meningkatkan kinerja model klasifikasi. Kami mengevaluasi serta membandingkan teknik-teknik seperti 
+Synthetic Minority Over-sampling Technique (SMOTE), SMOTE for Nominal and Continuous features (SMOTENC), Adaptive Synthetic Sampling (ADASYN), Random Over Sampling (ROS), dan Random Under Sampling (RUS). Temuan penelitian menunjukkan bahwa meskipun 
+teknik SMOTE, SMOTENC, dan ADASYN mampu menghasilkan kinerja yang baik pada data pelatihan, namun cenderung mengalami overfitting pada data pengujian. Sebaliknya, teknik ROS dan RUS menunjukkan performa yang lebih konsisten dan unggul pada data pengujian, sehingga 
+lebih kami pilih untuk digunakan dalam tahap tuning hyperparameter dan pelatihan model.
+
+Penerapan Principal Component Analysis (PCA) juga terbukti efektif dalam meningkatkan kinerja generalisasi model dengan mengurangi dimensi data dan mengatasi masalah multikolinearitas. PCA membantu model fokus pada komponen yang paling signifikan, 
+yang pada akhirnya meningkatkan akurasi prediksi. PCA digabungkan dengan berbagai model klasifikasi dan memberikan hasil yang positif, menunjukkan pentingnya teknik ini dalam proses preprocessing data sebelum pelatihan model.
+
+Model klasifikasi yang kami uji meliputi algoritma berbasis pohon keputusan seperti Extreme Gradient Boosting (XGBClassifier) dan Light Gradient Boosting Machine (LGBMClassifier), serta model linear seperti RidgeClassifier, LogisticRegression, 
+dan Linear Support Vector Classification (LinearSVC). Hasil eksperimen menunjukkan bahwa model berbasis pohon keputusan cenderung mengalami overfitting, sementara model linear menunjukkan performa yang lebih stabil dan dapat diandalkan 
+pada data pengujian. Hal ini menekankan pentingnya pemilihan model yang sesuai berdasarkan karakteristik dataset yang digunakan.
+
+Selain itu, kami juga menguji metode ensemble seperti Stacking, yang menghasilkan kinerja yang kompetitif namun rentan terhadap overfitting jika tidak ditangani dengan benar. Pemilihan dan kombinasi model dalam ensemble harus dilakukan dengan 
+hati-hati untuk memastikan generalisasi yang baik pada data pengujian.
+
+Secara keseluruhan, proyek ini menunjukkan bahwa penanganan ketidakseimbangan kelas, penerapan PCA, dan penggunaan metode ensemble dapat signifikan meningkatkan kinerja model klasifikasi. Implementasi teknik resampling yang 
+tepat dan tuning hyperparameter yang cermat adalah langkah penting dalam pengembangan model yang akurat dan robust. Proyek ini memberikan wawasan berharga bagi praktisi dalam mengembangkan model klasifikasi yang efektif.
+
+\section{Kode Program dan Kontribusi}
+\begin{itemize}
+    \item Kode program yang digunakan dalam studi komparasi algoritma klasifikasi \textit{Supervised Learning} pada artikel ini dapatdiakses pada tautan berikut: https://github.com/rayhanegar/Bntr-y-lg-diskusi
+    \item Laporan kontribusi dan laporan kemajuan selama proses studi komparasi algoritma klasifikasi \textit{Supervised Learning} dapat diakses pada tautan berikut: https://s.ub.ac.id/progressppmdfinal
+\end{itemize}
 
 \begin{thebibliography}{00}
-\bibitem{b1} Paper Arion
-\bibitem{b2} Paper Arion 2
-\bibitem{b3} Paper Arion 3
+\bibitem{b1} GeeksforGeeks, “Machine Learning Tutorial,” GeeksforGeeks, May 30, 2018. https://www.geeksforgeeks.org/machine-learning.
+\bibitem{b2} “Machine Learning,” Coursera, 2018. https://www.coursera.org/specializations/machine-learning-introduction.
+\bibitem{b3} Machine Learning, “Machine Learning,” IEEE DataPort, 2024. https://ieee-dataport.org/taxonomy/term/2005/all?page=2.
 \bibitem{b4} Shai Shalev-Shwartz and Shai Ben-David, Understanding machine learning: From foundations to algorithms. Cambridge Etc: Cambridge University Press, 2014.
 \bibitem{b5} F. Maymí and S. Lathrop, ''AI in Cyberspace: Beyond the Hype,'' 2024.
 \bibitem{b6} V. V. Putri Wibowo, Z. Rustam, and J. Pandelaki, ''Classification of Brain Tumor Using K-Nearest Neighbor-Genetic Algorithm and Support Vector Machine-Genetic Algorithm Methods,'' in 2021 International Conference on Decision Aid Sciences and Application, Sakheer, Bahrain: IEEE, Dec. 2021, pp. 1077--1081. doi: 10.1109/DASA53625.2021.9682341.
@@ -574,10 +959,29 @@ citation first, followed by the original foreign-language citation \cite{b6}.
 \bibitem{b27} P. Zhang, Y. Jia, and Y. Shang, "Research and application of XGBoost in imbalanced data," International Journal of Distributed Sensor Networks, vol. 18, no. 6, 2022, doi: 10.1177/15501329221106935.
 \bibitem{b28} C. P. Ananda, ''Machine Learning Untuk Prediksi Gaya Hidup Berdasarkan Socioeconomic Status Ses Menggunakan Algoritma Catboost Studi Kasus: Mahasiswa UIN Jakarta'', Bachelor's thesis, Fakultas Sains dan Teknologi UIN Syarif Hidayatullah Jakarta
 \bibitem{b29} R. Sanjeetha, A. Raj, K. Saivenu, M. I. Ahmed, B. Sathvik, A. Kanavalli, ''Detection and mitigation of botnet based DDoS attacks using catboost machine learning algorithm in SDN environment,'' International Journal of Advanced Technology and Engineering Exploration, vol. 8, no. 76, p. 445., 2021.
+\bibitem{b30} Rizky, P. S., Hirzi, R. H., Hidayaturrohman, U. (2022). Perbandingan Metode LightGBM dan XGBoost dalam Menangani Data dengan Kelas Tidak Seimbang. J Statistika: Jurnal Ilmiah Teori dan Aplikasi Statistika, 15(2), 228-236.
+\bibitem{b31} Shehadeh, A., Alshboul, O., Al Mamlook, R. E., Hamedat, O. (2021). Machine learning models for predicting the residual value of heavy construction equipment: An evaluation of modified decision tree, LightGBM, and XGBoost regression. Automation in Construction, 129, 103827.
+\bibitem{b32} Nugraha, A. F., Aziza, R. F. A., Pristyanto, Y. (2022). Penerapan metode stacking dan random forest untuk meningkatkan kinerja klasifikasi pada proses deteksi web phishing. Jurnal Infomedia: Teknik Informatika, Multimedia, dan Jaringan, 7(1), 39-44.
+\bibitem{b33} Sanjaya, J., Renata, E., Budiman, V. E., Anderson, F., Ayub, M. (2020). Prediksi Kelalaian Pinjaman bank Menggunakan random forest Dan adaptive boosting. Jurnal Teknik Informatika dan Sistem Informasi, 6(1).
+\bibitem{b34} Pandey, P., Prabhakar, R. (2016, August). An analysis of machine learning techniques (J48 and AdaBoost)-for classification. In 2016 1st India International Conference on Information Processing (IICIP) (pp. 1-6). IEEE. 
+\bibitem{b35} Little, R.J.A., Rubin, D.B. (2002). "Statistical Analysis with Missing Data." John Wiley \% Sons.
+\bibitem{b36} Witten, I.H., Frank, E., \& Hall, M.A. (2011). "Data Mining: Practical Machine Learning Tools and Techniques." Morgan Kaufmann.
+\bibitem{b37} Han, J., Kamber, M., \& Pei, J. (2011). "Data Mining: Concepts and Techniques." Morgan Kaufmann.
+\bibitem{b38} Chawla, N.V., Japkowicz, N., \& Kotcz, A. (2004). "Editorial: Special Issue on Learning from Imbalanced Data Sets." ACM SIGKDD Explorations Newsletter.
+\bibitem{b39} Jolliffe, I.T., \& Cadima, J. (2016). "Principal component analysis: a review and recent developments." Philosophical Transactions of the Royal Society A.
+\bibitem{b40} I. S. Mangkunegara and P. Purwono, "Analysis of DNA Sequence Classification Using SVM Model with Hyperparameter Tuning Grid Search CV," 2022 IEEE International Conference on Cybernetics and Computational Intelligence (CyberneticsCom), Malang, Indonesia, 2022.
+\bibitem{b41} Anjan, G.S.K.; Kumar Verma, A.; Radhika, S. K-Nearest neighbors and grid search CV based real time fault monitoring system for industries. In Proceedings of the 2019 IEEE 5th International Conference for Convergence in Technology, I2CT 2019, Bombay, India, 29–31 March 2019; p. 5.
+\bibitem{b42} T. Yan, S. L. Shen, A. Zhou, and X.-S. Chen, “Prediction of geological characteristics from shield operational parameters using integrating grid search and K-fold cross validation into stacking classification algorithm,”, 2022
+\bibitem{b43} K. R. Singh, K. P. Neethu, K. Madhurekaa, A. Harita, and P. Mohan, “Parallel SVM model for forest fire prediction,”, 2021.
+\bibitem{b44} Polipireddy Srinivas, Rahul Katarya, “hyOPTXg: OPTUNA hyper-parameter optimization framework for predicting cardiovascular disease using XGBoost,” Biomedical Signal Processing and Control, Volume 73, 2022.
+\bibitem{b45} Akiba, T., Sano, S., Yanase, T., Ogino, Y., \& Ohta, N. (2019, Juni). “Optuna: A distributed hyperparameter optimization framework,” In Proceedings of the 25th ACM SIGKDD International Conference on Knowledge Discovery and Data Mining
+\bibitem{b46} D. Marutho, "Perbandingan Metode Naïve Bayes, KNN, Decision Tree pada Laporan Water Level Jakarta," Infokam, vol. II, no. XV, pp. SEPTEMBER, 2019.
+\bibitem{b47} S. Lonang, A. Yudhana, and M. K. Biddinika, "Analisis Komparatif Kinerja Algoritma Machine Learning untuk Deteksi Stunting," J. Media Informatika Budidarma, vol. 7, no. 4, pp. 2109-2117, Oct. 2023.
+\bibitem{b48} I. J. Sokolova and G. Lapin, "A unified approach to evaluation metrics for binary classification tasks," IEEE Transactions on Pattern Analysis and Machine Intelligence, vol. 31, no. 12, pp. 2274-2289, Dec. 2009. DOI: 10.1109/TPAMI.2009.113
+\bibitem{b49} R. Caruana et al., "Beyond accuracy, precision, and recall: The quest for a comprehensive performance metric in machine learning," in Proceedings of the 21th ACM SIGKDD International Conference on Knowledge Discovery and Data Mining, New York, NY, USA, Aug. 2014, pp. 239-248. DOI: 10.1145/2670495.2670547
+\bibitem{b50} D. Stone, "Cross-validation: A simple and powerful method for evaluation of learning algorithms," Journal of the American Statistical Association, vol. 79, no. 387, pp. 575-583, Sep. 1974.
 
 \end{thebibliography}
 \vspace{12pt}
-\color{red}
-IEEE conference templates contain guidance text for composing and formatting conference papers. Please ensure that all template text is removed from your conference paper prior to submission to the conference. Failure to remove the template text from your paper may result in your paper not being published.
 
 \end{document}
