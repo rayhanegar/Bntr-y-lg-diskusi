@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.3.31) (preloaded format=pdflatex 2024.4.17)  17 APR 2024 20:21
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.3.31) (preloaded format=pdflatex 2024.4.17)  20 MAY 2024 15:44
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**"c:/Users/RAYHAN EGAR/Documents/College/CIF62017 Pengantar Pembelajaran Mesin/LaTeX/conference_101719.tex"
-(c:/Users/RAYHAN EGAR/Documents/College/CIF62017 Pengantar Pembelajaran Mesin/LaTeX/conference_101719.tex
+**"c:/Users/RAYHAN EGAR/Documents/College/CIF62017 Pengantar Pembelajaran Mesin/Code PPM/Bntr-y-lg-diskusi/LaTeX/Final_Project_PPM.tex"
+(c:/Users/RAYHAN EGAR/Documents/College/CIF62017 Pengantar Pembelajaran Mesin/Code PPM/Bntr-y-lg-diskusi/LaTeX/Final_Project_PPM.tex
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-03-14>
 (IEEEtran.cls
@@ -233,8 +233,8 @@ Package xcolor Info: Model `wave' substituted by `hsb' on input line 1373.
 File: l3backend-pdftex.def 2024-03-14 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count285
 \l__pdf_internal_box=\box55
-) (conference_101719.aux)
-\openout1 = `conference_101719.aux'.
+) (Final_Project_PPM.aux)
+\openout1 = `Final_Project_PPM.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 12.
 LaTeX Font Info:    ... okay on input line 12.
@@ -271,35 +271,53 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 48
  (C:\Users\RAYHAN EGAR\AppData\Local\Programs\MiKTeX\tex/latex/00miktex\epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 ))
-LaTeX Font Info:    Trying to load font information for U+msa on input line 57.
+LaTeX Font Info:    Calculating math sizes for size <11> on input line 63.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 63.
  (C:\Users\RAYHAN EGAR\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 57.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 63.
  (C:\Users\RAYHAN EGAR\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)
-LaTeX Font Info:    Calculating math sizes for size <11> on input line 57.
- [1{C:/Users/RAYHAN EGAR/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{C:/Users/RAYHAN EGAR/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.enc}
+) [1{C:/Users/RAYHAN EGAR/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{C:/Users/RAYHAN EGAR/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.enc}
 
 
 ]
-LaTeX Font Info:    Trying to load font information for OT1+pcr on input line 127.
+LaTeX Font Info:    Trying to load font information for OT1+pcr on input line 203.
  (C:\Users\RAYHAN EGAR\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\ot1pcr.fd
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
-)
-<fig1.png, id=12, 82.1469pt x 71.5473pt>
+) [2]
+<fig1.png, id=22, 82.1469pt x 71.5473pt>
 File: fig1.png Graphic file (type png)
 <use fig1.png>
-Package pdftex.def Info: fig1.png  used on input line 232.
+Package pdftex.def Info: fig1.png  used on input line 308.
 (pdftex.def)             Requested size: 82.14668pt x 71.5471pt.
-LaTeX Font Info:    Trying to load font information for OMS+ptm on input line 243.
+LaTeX Font Info:    Trying to load font information for OMS+ptm on input line 319.
  (C:\Users\RAYHAN EGAR\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\omsptm.fd
 File: omsptm.fd 
 )
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 243.
- [2]
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 319.
+ [3 <./fig1.png (PNG copy)>]
+Underfull \hbox (badness 1389) in paragraph at lines 358--359
+\OT1/ptm/m/n/8 ''Covid-19 Sever-ity Clas-si-fi-ca-tion Us-ing Su-per-vised Learn-ing Ap-
+ []
+
+
+Underfull \hbox (badness 3525) in paragraph at lines 362--363
+[]\OT1/ptm/m/n/8 K. Yuk Car-rie Lin, ''Op-ti-miz-ing vari-able se-lec-tion and neigh-
+ []
+
+
+Underfull \hbox (badness 1389) in paragraph at lines 362--363
+\OT1/ptm/m/n/8 bour-hood size in the K-nearest neigh-bour al-go-rithm,'' Com-put-ers
+ []
+
+
+Underfull \hbox (badness 2809) in paragraph at lines 363--364
+\OT1/ptm/m/n/8 tern Recog-ni-tion Let-ters, vol. 109, pp. 44--54, Jul. 2018, doi:
+ []
+
 
 ** Conference Paper **
 Before submitting the final camera ready copy, remember to:
@@ -311,24 +329,24 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the appropriate paper size.
 
-[3 <./fig1.png (PNG copy)>] (conference_101719.aux)
+[4] (Final_Project_PPM.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-03-14>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 4294 strings out of 474424
- 68779 string characters out of 5738871
- 1947496 words of memory out of 5000000
- 26588 multiletter control sequences out of 15000+600000
- 609174 words of font info for 137 fonts, out of 8000000 for 9000
+ 4307 strings out of 474424
+ 69097 string characters out of 5738871
+ 1945496 words of memory out of 5000000
+ 26601 multiletter control sequences out of 15000+600000
+ 608725 words of font info for 136 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 57i,11n,65p,677b,304s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<C:/Users/RAYHAN EGAR/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/RAYHAN EGAR/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/RAYHAN EGAR/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/RAYHAN EGAR/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/RAYHAN EGAR/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/RAYHAN EGAR/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/RAYHAN EGAR/AppData/Local/Programs/MiKTeX/fonts/type1/urw/courier/ucrr8a.pfb><C:/Users/RAYHAN EGAR/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmb8a.pfb><C:/Users/RAYHAN EGAR/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmbi8a.pfb><C:/Users/RAYHAN EGAR/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/Users/RAYHAN EGAR/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmri8a.pfb>
-Output written on conference_101719.pdf (3 pages, 143015 bytes).
+ 57i,11n,65p,704b,336s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<C:/Users/RAYHAN EGAR/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/RAYHAN EGAR/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/RAYHAN EGAR/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Users/RAYHAN EGAR/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/RAYHAN EGAR/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/RAYHAN EGAR/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Users/RAYHAN EGAR/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/RAYHAN EGAR/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/RAYHAN EGAR/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/RAYHAN EGAR/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/RAYHAN EGAR/AppData/Local/Programs/MiKTeX/fonts/type1/urw/courier/ucrr8a.pfb><C:/Users/RAYHAN EGAR/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmb8a.pfb><C:/Users/RAYHAN EGAR/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmbi8a.pfb><C:/Users/RAYHAN EGAR/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/Users/RAYHAN EGAR/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmri8a.pfb>
+Output written on Final_Project_PPM.pdf (4 pages, 194918 bytes).
 PDF statistics:
- 69 PDF objects out of 1000 (max. 8388607)
+ 92 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  6 words of extra memory for PDF output out of 10000 (max. 10000000)
 

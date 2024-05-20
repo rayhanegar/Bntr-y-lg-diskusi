@@ -11,47 +11,53 @@
     T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
 \begin{document}
 
-\title{Conference Paper Title*\\
-{\footnotesize \textsuperscript{*}Note: Sub-titles are not captured in Xplore and
-should not be used}
-\thanks{Identify applicable funding agency here. If none, delete this.}
+\title{Studi Komparasi Performa Algoritma \textit{Supervised-Learning} dalam Klasifikasi Multidataset\\
 }
 
-\author{\IEEEauthorblockN{1\textsuperscript{st} Given Name Surname}
-\IEEEauthorblockA{\textit{dept. name of organization (of Aff.)} \\
-\textit{name of organization (of Aff.)}\\
-City, Country \\
-email address or ORCID}
+\author{\IEEEauthorblockN{I Gusti Ngurah Ryo Aditarta}
+\IEEEauthorblockA{\textit{Fakultas Ilmu Komputer} \\
+\textit{Universitas Brawijaya}\\
+Malang, Indonesia \\
+ryoaditarta@student.ub.ac.id}
+
 \and
-\IEEEauthorblockN{2\textsuperscript{nd} Given Name Surname}
-\IEEEauthorblockA{\textit{dept. name of organization (of Aff.)} \\
-\textit{name of organization (of Aff.)}\\
-City, Country \\
-email address or ORCID}
+
+\IEEEauthorblockN{2\textsuperscript{nd} Dian Pandu Syahfitra}
+\IEEEauthorblockA{\textit{Fakultas Ilmu Komputer} \\
+\textit{Universitas Brawijaya}\\
+Malang, Indonesia \\
+dianpandu@student.ub.ac.id}
+
 \and
-\IEEEauthorblockN{3\textsuperscript{rd} Given Name Surname}
-\IEEEauthorblockA{\textit{dept. name of organization (of Aff.)} \\
-\textit{name of organization (of Aff.)}\\
-City, Country \\
-email address or ORCID}
+
+\IEEEauthorblockN{3\textsuperscript{rd} Rayhan Egar Sadtya Nugraha}
+\IEEEauthorblockA{\textit{Fakultas Ilmu Komputer} \\
+\textit{Universitas Brawijaya}\\
+Malang, Indonesia \\
+rayhanegar@student.ub.ac.id}
+
 \and
-\IEEEauthorblockN{4\textsuperscript{th} Given Name Surname}
-\IEEEauthorblockA{\textit{dept. name of organization (of Aff.)} \\
-\textit{name of organization (of Aff.)}\\
-City, Country \\
-email address or ORCID}
+
+\IEEEauthorblockN{4\textsuperscript{th} Ahmad Zaki}
+\IEEEauthorblockA{\textit{Fakultas Ilmu Komputer} \\
+\textit{Universitas Brawijaya}\\
+Malang, Indonesia \\
+ahmadzaki12@student.ub.ac.id}
+
 \and
-\IEEEauthorblockN{5\textsuperscript{th} Given Name Surname}
-\IEEEauthorblockA{\textit{dept. name of organization (of Aff.)} \\
-\textit{name of organization (of Aff.)}\\
-City, Country \\
-email address or ORCID}
+
+\IEEEauthorblockN{5\textsuperscript{th} Muhammad Arya Ghifari}
+\IEEEauthorblockA{\textit{Fakultas Ilmu Komputer} \\
+\textit{Universitas Brawijaya}\\
+Malang, Indonesia \\
+aryaghifary07@student.ub.ac.id}
+
 \and
-\IEEEauthorblockN{6\textsuperscript{th} Given Name Surname}
-\IEEEauthorblockA{\textit{dept. name of organization (of Aff.)} \\
-\textit{name of organization (of Aff.)}\\
-City, Country \\
-email address or ORCID}
+\IEEEauthorblockN{6\textsuperscript{th} Arion Syemael Siahaan}
+\IEEEauthorblockA{\textit{Fakultas Ilmu Komputer} \\
+\textit{Universitas Brawijaya}\\
+Malang, Indonesia \\
+siahaanarion@student.ub.ac.id}
 }
 
 \maketitle
@@ -70,17 +76,87 @@ component, formatting, style, styling, insert
 This document is a model and instructions for \LaTeX.
 Please observe the conference page limits. 
 
-\section{Ease of Use}
+\section{Algoritma Klasifikasi Supervised Learning}
 
-\subsection{Maintaining the Integrity of the Specifications}
+\subsection{K-Nearest Neighbors (KNN)}
 
-The IEEEtran class file is used to format your paper and style the text. All margins, 
-column widths, line spaces, and text fonts are prescribed; please do not 
-alter them. You may note peculiarities. For example, the head margin
-measures proportionately more than is customary. This measurement 
-and others are deliberate, using specifications that anticipate your paper 
-as one part of the entire proceedings, and not as an independent document. 
-Please do not revise any of the current designations.
+Algoritma klasifikasi \textit{nearest neighbors} seperti KNN merupakan salah satu algoritma dasar nonparametrik 
+dalam pembelajaran mesin. Hal ini didasarkan pada \textit{rationale} di mana fitur yang digunakan untuk 
+mendeskripsikan label sebuah \textit{domain point} memiliki relevansi dengan \textit{domain point} lain dalam sisi 
+\textit{proximity} \cite{b4, b5}. Dalam implementasinya, KNN banyak digunakan dalam permasalahan 
+klasifikasi dengan domain pengetahuan yang terdefinisi dan diketahui dengan baik, 
+seperti klasifikasi tumor otak \cite{b6}, klasifikasi tingkat keparahan Covid-19 \cite{b7}, maupun prognosis kanker \cite{b8}.
+
+Secara prinsip, nilai parameter $k$ yang merepresentasikan banyaknya \textit{domain point} yang digunakan 
+dalam penentuan label serta metode perhitungan jarak merupakan konsiderasi utama. Nilai $k$ yang
+terlalu kecil memberikan model yang kompleks dan kurang mampu mengakomodasi \textit{unseen data}, sedangkan 
+nilai $k$ yang terlalu besar memberikan model yang terlalu sederhana untuk secara akurat 
+mengklasifikasikan suatu \textit{domain point} \cite{b9}. Beberapa teknik, seperti \textit{normalized class coherence}, 
+\textit{change-based KNN}, \textit{variable selection} dan \textit{weighting}, maupun normalisasi L1 dan LPP dapat digunakan untuk 
+memberikan estimasi yang lebih baik \cite{b10,b11,b12}. Selain itu, pilihan perhitungan jarak antara domain point 
+dalam proses pembelajaran model seperti Euclidean ``\eqref{euclidean}'', Manhattan ``\eqref{manhattan}'', maupun Minkowski ``\eqref{minkowski}'' untuk pemetaan label kelas 
+juga perlu untuk diperhatikan.
+
+\begin{equation}
+    d(x, y)=\sqrt{\sum_{i=1}^{n} (y_i - x_i)^2} \label{euclidean}
+\end{equation}
+
+\begin{equation}
+    d(x,y) = \sum_{i=1}^{n}|x_i - y_i| \label{manhattan}
+\end{equation}
+
+\begin{equation}
+    d(x, y) = (\sum_{i=1}^{n} |x_i - y_i|^p)^{\frac{1}{4}} \label{minkowski}
+\end{equation}
+
+\subsection{Ridge Classifier (RC)}
+
+Algoritma klasifikasi \textit{Ridge Classifier} (RC) dikembangkan dari algoritma \textit{Ridge Regression} yang mengkombinasikan 
+\textit{learning rule} \textit{Regularized Learning Minimization} (RLM) dengan regresi \textit{linear ordinary least squares} [1]. 
+Algoritma RC melakukan \textit{class labelling} berdasarkan tanda/\textit{sign} dari suatu \textit{data point} (positif atau negatif). 
+Penggunaan fungsi regularisasi, seperti regularisasi L2/Tikhonov ``\eqref{l2_norm}'' ``\eqref{tikhonov}'' pada algoritma klasifikasi memberikan model yang lebih “stabil” 
+dan mencegah terjadinya \textit{overfitting} \cite{b4, b5}. Dibandingkan dengan regresi linear, algoritma RC akan meminimalisasi nilai 
+koefisien $w$ untuk masing-masing fitur, memberikan model dengan kemampuan generalisasi yang baik terhadap \textit{unseen data}. Dengan demikian, fungsi
+yang digunakan dalam RC dapat didefinisikan secara formal pada ``\eqref{ridgeregression}''.
+
+\begin{equation}
+    ||w|| = \sqrt{\sum_{i=1}^{d} w_i^2} \label{l2_norm}
+\end{equation}
+
+\begin{equation}
+    \arg min _{w}(L_s(w) + \lambda ||w||^2) \label{tikhonov}
+\end{equation}
+
+\begin{equation}
+    \arg min_{w \in R^d} (\lambda||w||^2 + \frac{1}{m}\sum_{i=1}^{m}(<w, x_i> - y_i)^2) \label{ridgeregression}
+\end{equation}
+
+Dalam melakukan proses pembelajaran model, parameter regularisasi menjadi konsiderasi utama. Semakin kecil nilai, nilai 
+koefisien $w$ akan semakin kecil, memberikan model dengan generalisasi yang baik namun dengan potensi \textit{underfitting}. 
+Nilai $\alpha$ yang semakin besar akan meminimalisasi efek regularisasi, memberikan model dengan kompleksitas yang lebih tinggi 
+namun dengan potensi \textit{overfitting} untuk \textit{unseen data}. Selain dengan menggunakan \textit{cross-validation} untuk \textit{hyperparameter tuning}, teknik seperti 
+\textit{fractional ridge regression} \cite{b13} dengan memanfaatkan rasio L2-norm antara \textit{regularized} dan \textit{normal coefficients} dapat membantu menemukan 
+nilai $\alpha$ yang optimal.
+
+\subsection{Logistic Regression (LR)}
+
+\subsection{Decision Tree (DT)}
+
+\subsection{Naive-Bayes (NB)}
+
+\subsection{Linear Support Vector Machine (Linear SVM)}
+
+\subsection{Random Forest (RF)}
+
+\subsection{Extreme Gradient Boosting (XGBoost)}
+
+\subsection{Categorical Boosting (CatBoost)}
+
+\subsection{Adaptive Boosting (AdaBoost)}
+
+\subsection{Light Gradient Boosting Machine (LGBM)}
+
+\subsection{Ensemble (Stacking)}
 
 \section{Prepare Your Paper Before Styling}
 Before you begin to format your paper, first write and save the content as a 
@@ -273,13 +349,19 @@ For papers published in translation journals, please give the English
 citation first, followed by the original foreign-language citation \cite{b6}.
 
 \begin{thebibliography}{00}
-\bibitem{b1} G. Eason, B. Noble, and I. N. Sneddon, ``On certain integrals of Lipschitz-Hankel type involving products of Bessel functions,'' Phil. Trans. Roy. Soc. London, vol. A247, pp. 529--551, April 1955.
-\bibitem{b2} J. Clerk Maxwell, A Treatise on Electricity and Magnetism, 3rd ed., vol. 2. Oxford: Clarendon, 1892, pp.68--73.
-\bibitem{b3} I. S. Jacobs and C. P. Bean, ``Fine particles, thin films and exchange anisotropy,'' in Magnetism, vol. III, G. T. Rado and H. Suhl, Eds. New York: Academic, 1963, pp. 271--350.
-\bibitem{b4} K. Elissa, ``Title of paper if known,'' unpublished.
-\bibitem{b5} R. Nicole, ``Title of paper with only first word capitalized,'' J. Name Stand. Abbrev., in press.
-\bibitem{b6} Y. Yorozu, M. Hirano, K. Oka, and Y. Tagawa, ``Electron spectroscopy studies on magneto-optical media and plastic substrate interface,'' IEEE Transl. J. Magn. Japan, vol. 2, pp. 740--741, August 1987 [Digests 9th Annual Conf. Magnetics Japan, p. 301, 1982].
-\bibitem{b7} M. Young, The Technical Writer's Handbook. Mill Valley, CA: University Science, 1989.
+\bibitem{b1} Paper Arion
+\bibitem{b2} Paper Arion 2
+\bibitem{b3} Paper Arion 3
+\bibitem{b4} Shai Shalev-Shwartz and Shai Ben-David, Understanding machine learning: From foundations to algorithms. Cambridge Etc: Cambridge University Press, 2014.
+\bibitem{b5} F. Maymí and S. Lathrop, ''AI in Cyberspace: Beyond the Hype,'' 2024.
+\bibitem{b6} V. V. Putri Wibowo, Z. Rustam, and J. Pandelaki, ''Classification of Brain Tumor Using K-Nearest Neighbor-Genetic Algorithm and Support Vector Machine-Genetic Algorithm Methods,'' in 2021 International Conference on Decision Aid Sciences and Application, Sakheer, Bahrain: IEEE, Dec. 2021, pp. 1077--1081. doi: 10.1109/DASA53625.2021.9682341.
+\bibitem{b7} N. F. B. M. Noor, H. S. Sipail, N. Ahmad, and N. M. Noor, ''Covid-19 Severity Classification Using Supervised Learning Approach,'' in 2021 IEEE National Biomedical Engineering Conference, Kuala Lumpur, Malaysia: IEEE, Nov. 2021, pp. 151--156. doi: 10.1109/NBEC53282.2021.9618747.
+\bibitem{b8} A. P. Pawlovsky and H. Matsuhashi, ''The use of a novel genetic algorithm in component selection for a kNN method for breast cancer prognosis,'' in 2017 Global Medical Engineering Physics Exchanges/Pan American Health Care Exchanges, Tuxtla-Gutierrez, Mexico: IEEE, Mar. 2017, pp. 1--5. doi: 10.1109/GMEPE-PAHCE.2017.7972084.
+\bibitem{b9} A. C. Müller and S. Guido, Introduction to Machine Learning with Python: A Guide for Data Scientists. Beijing: O'reilly, 2017.
+\bibitem{b10} K. Kim, ''Normalized class coherence change-based k NN for classification of imbalanced data,'' Pattern Recognition, vol. 120, p. 108126, Dec. 2021, doi: 10.1016/j.patcog.2021.108126.
+\bibitem{b11} K. Yuk Carrie Lin, ''Optimizing variable selection and neighbourhood size in the K-nearest neighbour algorithm,'' Computers and Industrial Engineering, vol. 191, p. 110142, May 2024, doi: 10.1016/j.cie.2024.110142.
+\bibitem{b12} S. Zhang, D. Cheng, Z. Deng, M. Zong, and X. Deng, ''A novel k NN algorithm with data-driven k parameter computation,'' Pattern Recognition Letters, vol. 109, pp. 44--54, Jul. 2018, doi: 10.1016/j.patrec.2017.09.036.
+\bibitem{b13} A. Rokem and K. Kay, ''Fractional ridge regression: a fast, interpretable reparameterization of ridge regression,'' GigaScience, vol. 9, no. 12, p. giaa133, Nov. 2020, doi: 10.1093/gigascience/giaa133.
 \end{thebibliography}
 \vspace{12pt}
 \color{red}
