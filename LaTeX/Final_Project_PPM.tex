@@ -140,17 +140,213 @@ nilai $\alpha$ yang optimal.
 
 \subsection{Logistic Regression (LR)}
 
+\textit{Logistic Regression} (LR) merupakan algoritma klasifikasi yang didefinisikan secara formal sebagai komposisi fungsi 
+sigmoid ``\eqref{sigmoid}''terhadap suatu fungsi regresi linear untuk membuat kelas hipotesis ``\eqref{logreg_hypothesis}'' \cite{b4}. Algoritma LR, bersama dengan RC, digunakan dalam kasus klasifikasi 
+dengan memperhatikan tanda/\textit{sign} suatu \textit{domain point}\cite{b9}. LR memanfaatkan regularisasi L2/\textit{ridge} dengan koefisien regularisasi 
+$\alpha$, di mana semakin rendah nilai $\alpha$, model yang dihasilkan akan lebih sederhana dengan koefisien \textit{w} yang semakin kecil. 
+Sebagai \textit{weak learner}, \textit{ensembling} dari model LR dengan menggunakan AdaBoost dapat membantu meningkatkan performa generalisasi model 
+dengan proses iteratif.  Studi \cite{b14} menunjukkan jika penggunaan metode \textit{robust functional principal component analysis} (RFPCA) 
+memberikan dampak positif pada performa klasifikasi model LR. Dengan demikian, \textit{learning rule} algoritma klasifikasi LR dapat secara formal didefinisikan dalam bentuk ``\eqref{logreg}''
+
+\begin{equation}
+    \sigma_{sig}(z) = \frac{1}{1+ \exp(-z)} \label{sigmoid}
+\end{equation}
+
+\begin{equation}
+    H_{sig} = \sigma_{sig} \circ L_d \label{logreg_hypothesis}
+\end{equation}
+
+\begin{equation}
+    \arg min_{w \in R^d} \frac{1}{m} \sum_{i=1}^{m}\log(1+\exp(-y_i<w, x_i>)) \label{logreg}
+\end{equation}
+
 \subsection{Decision Tree (DT)}
+
+\textit{Decision Tree} (DT) merupakan algoritma klasifikasi yang terdiri dari himpunan pertanyaan \textit{if-else} sebagai \textit{splitting criteria} yang dibangun secara iteratif 
+dengan pendekatan \textit{top-down} untuk memisahkan suatu kelas dari kelas lainnya. Setiap node yang terbentuk pada DT memiliki nilai entropi ``\eqref{entropy}'' yang merepresentasikan 
+rata-rata informasi yang diperlukan untuk melakukan separasi label kelas \cite{b15}. Fitur yang dipilih sebagai \textit{splitting criteria} sebuah node untuk menghasilkan \textit{child node} 
+didasarkan atas \textit{gain measure} yang berbeda-beda untuk setiap algoritma DT \cite{b4}. Algoritma ID3 mengimplementasikan \textit{Information Gain} (IG) ``\eqref{information_gain}'' sebagai \textit{gain measure}, sedangkan algoritma C4.5 
+mengimplementasikan Gain Ratio (GR) ``\eqref{gain_ratio}'' \cite{b16}. Pemilihan hyperparameter DT yang optimal untuk suatu dataset, seperti \textit{maximum depth} (MD), \textit{maximum leaf nodes} dan \textit{minimum samples} 
+dalam pembentukan \textit{leaf nodes} mampu memberikan model DT dengan performa generalisasi yang baik dan mencegah \textit{overfitting} akibat \textit{tree size} yang terlalu besar \cite{b17}.
+
+\begin{equation}
+    H(S) = \sum_{i=1}^{C} p_i \log_2(p_i) \label{entropy}
+\end{equation}
+
+\begin{equation}
+    IG(S, A) = H(S) - \sum_{v \in Values(A)} \frac{|S_v|}{|S|} H(S_v) \label{information_gain}
+\end{equation}
+
+\begin{equation}
+    GR(S, A) = \frac{IG(S,A)}{SI(S, A)} \label{gain_ratio}
+\end{equation}
+
+\begin{equation}
+    SI(S, A) = -\sum_{v \in Values(A)} \frac{|S_v|} {|S|} \log_2(\frac{|S_v|} {|S|}) \label{split_info}
+\end{equation}
 
 \subsection{Naive-Bayes (NB)}
 
-\subsection{Linear Support Vector Machine (Linear SVM)}
+Algoritma Naive-Bayes adalah salah satu algoritma pembelajaran mesin yang populer untuk tugas klasifikasi. Algoritma ini didasarkan pada teorema Bayes dan beroperasi dengan asumsi "\textit{naive}" 
+bahwa semua fitur yang ada bersifat independen satu sama lain. Asumsi ini menyederhanakan perhitungan probabilitas, menjadikan algoritma ini sangat efisien meskipun dalam kenyataannya 
+fitur-fitur tersebut mungkin tidak sepenuhnya independen \cite{b19}. Dalam konteks data fungsional, Naive-Bayes digunakan untuk mengklasifikasikan objek berdasarkan data pelatihan dengan 
+menggunakan "\textit{surrogate densities}" yang diturunkan dari skor \textit{Functional Common Principal Component} (FCPC) \cite{b18}.
+
+Algoritma Naive-Bayes juga menghadapi tantangan dalam ruang berdimensi tinggi, di mana fungsi kepadatan probabilitas seringkali tidak ada sehingga pendekatan densitas klasik tidak dapat digunakan. 
+Untuk mengatasi masalah ini, asumsi \textit{naive} diterapkan pada skor FCPC yang memungkinkan definisi densitas dari data fungsional \cite{b18}. Studi simulasi dan aplikasi pada data nyata menunjukkan 
+bahwa Naive-Bayes sering memberikan performa yang kompetitif dibandingkan dengan algoritma klasifikasi lainnya seperti regresi logistik multinomial, k-NN, analisis diskriminan linear, dan mesin vektor pendukung, 
+terutama ketika jumlah komponen meningkat \cite{b18}.
+
+\begin{itemize}
+    \item Probabilitas posterior
+        \begin{equation}
+            P(C_k | x) = \frac{P(x | C_k) \cdot P(C_k)}{P(x)}
+        \end{equation}
+    \item Probabilitas kondisional
+        \begin{equation}
+            P(x | C_k) = \prod_{i=1}^{n} P(x_i | C_k)
+        \end{equation}
+    \item Estimasi probabilitas dengan distribusi normal (Gaussian Naive-Bayes)
+        \begin{equation}
+            C_k = \underset{C \in C}{\text{arg max}} P(C | x) = \underset{C \in C}{\text{arg max}} P(C) \cdot \prod_{i=1}^{n} P(x_i | C)
+        \end{equation}
+    \item Klasifikasi dengan Naive-Bayes
+        \begin{equation}
+            P(x_i | C_k) = \frac{1}{\sqrt{2 \pi \sigma_k^2}} \cdot \exp \left( \frac{-(x_i - \mu_k)^2}{2 \sigma_k^2} \right)
+        \end{equation}
+\end{itemize}
+
+\subsection{Support Vector Machine (SVM)}
+
+\textit{Support Vector Machine} (SVM) adalah algoritma pembelajaran mesin yang digunakan untuk klasifikasi dan regresi \cite{b21}. Algoritma ini bekerja dengan mencari 
+\textit{hyperplane} terbaik yang memisahkan data ke dalam kelas yang berbeda \cite{b20}. \textit{Hyperplane} adalah batas keputusan yang memisahkan set data dengan label yang berbeda; 
+dalam ruang dua dimensi, \textit{hyperplane} adalah garis; dalam ruang tiga dimensi, \textit{hyperplane} adalah bidang; dan dalam dimensi yang lebih tinggi, \textit{hyperplane} adalah objek dengan 
+dimensi lebih tinggi yang memisahkan data \cite{b22}.
+
+Pada dasarnya, SVM bertujuan untuk menemukan \textit{hyperplane} yang memaksimalkan margin, yaitu jarak antara \textit{hyperplane} dan titik data terdekat dari setiap kelas \cite{b21}. 
+Untuk data yang tidak dapat dipisahkan secara linear, SVM menggunakan fungsi kernel untuk memetakan data ke dimensi yang lebih tinggi di mana data tersebut dapat dipisahkan secara linear \cite{b22}. 
+Beberapa fungsi kernel yang umum digunakan adalah kernel linear, kernel polinomial, dan \textit{Radial Basis Function} (RBF) \cite{b20}.
+
+Rumus penting dalam SVM melibatkan fungsi objektif yang bertujuan meminimalkan norma vektor bobot, dengan syarat bahwa data dapat dipisahkan dengan margin yang maksimal \cite{b21}. Untuk data yang tidak 
+dapat dipisahkan secara sempurna, variabel \textit{slack} digunakan untuk mengatasi kasus-kasus ini \cite{b22}. Implementasi SVM melibatkan pemilihan fungsi kernel yang sesuai dan penentuan parameter 
+model yang optimal, serta memecahkan masalah optimasi untuk mendapatkan \textit{hyperplane} yang dapat memprediksi label data baru \cite{b20}.
+
+\begin{itemize}
+    \item Fungsi Linear SVM
+        \begin{equation}
+            f(x) = w^T x + b
+        \end{equation}
+    \item Margin optimal
+        \begin{equation}
+            Margin = \frac{2}{||w||^2}
+        \end{equation}
+    \item Fungsi Objektif untuk SVM (data yang dapat dipisahkan secara linear)
+        \begin{equation}
+            \underset{w,b}{\text{min}} \frac{1}{2} ||w||^2
+        \end{equation}
+    \item Fungsi Objektif untuk SVM (data yang tidak dapat dipisahkan secara linear)
+        \begin{equation}
+            \underset{w,b,\xi}{\text{min}} \frac{1}{2} ||w||^2 + C \sum_{i=1}^n \xi_i
+        \end{equation}
+    \item Fungsi Kernel
+        \begin{equation}
+            K(x_i, x_j) = x_i^T x_j
+        \end{equation}
+    \item Kernel Linear
+        \begin{equation}
+            K(x_i, x_j) = (x_i^T x_j + c)^d
+        \end{equation}
+    \item Kernel RBF
+        \begin{equation}
+            K(x_i, x_j) = \exp(-||x_i - x_j||^2 / \gamma)
+        \end{equation}
+\end{itemize}
 
 \subsection{Random Forest (RF)}
 
+Algoritma \textit{Random Forest} (RF) adalah metode pembelajaran \textit{ensemble} yang beroperasi dengan membangun banyak pohon keputusan selama pelatihan dan menghasilkan mode dari kelas (klasifikasi) 
+atau rata-rata prediksi (regresi) dari masing-masing pohon. Dalam konteks pembelajaran \textit{semi-supervised}, algoritma \textit{Co-Forest} memperluas pendekatan Random Forest dengan menggunakan 
+beberapa \textit{classifier} untuk menangani contoh-contoh yang tidak berlabel \cite{b23}. Algoritma ini secara iteratif menyempurnakan setiap \textit{classifier} dengan contoh-contoh baru yang diberi label, 
+yang dipilih berdasarkan kepercayaan \textit{classifier} lain dalam \textit{ensemble} \cite{b23}. Hasil eksperimen menunjukkan bahwa \textit{Co-Forest} meningkatkan kinerja, terutama ketika proporsi data berlabel rendah, 
+seperti pada dataset biologis \cite{b23}. Dengan menggunakan contoh yang tidak berlabel untuk meningkatkan pembelajaran dari sampel yang diberi label, \textit{Co-Forest} menunjukkan peningkatan 
+rata-rata sebesar 3,6\% pada kondisi dengan 60\% data tidak berlabel \cite{b23}.
+
+Pendekatan lain yang diperkenalkan adalah \textit{Confidence weighted Random Forest} (CwRF), yang menambahkan skor kepercayaan untuk setiap node daun dalam pohon keputusan \cite{b24}. Skor kepercayaan ini digunakan 
+untuk memberi bobot pada suara dari pohon-pohon tersebut, memberikan pengaruh lebih besar pada pohon yang membuat prediksi dengan lebih percaya diri \cite{b24}. Kepercayaan dihitung berdasarkan metrik \textit{impurity} 
+seperti entropi dan indeks Gini \cite{b24}. Skor kepercayaan ini kemudian digunakan untuk menimbang probabilitas kelas dari setiap pohon selama fase pengujian \cite{b24}. Hasil eksperimen menunjukkan bahwa CwRF secara konsisten 
+mengungguli RF tradisional dan metode canggih lainnya pada berbagai dataset, menunjukkan efektivitasnya dalam meningkatkan proses pengambilan keputusan secara keseluruhan \cite{b24}. Algoritma ini terbukti efektif 
+di berbagai aplikasi, memperkuat potensinya untuk diterapkan secara lebih luas \cite{b24}.
+
+\begin{itemize}
+    \item \textit{GINI Impurity} (GI)
+        \begin{equation}
+            GI(S) = 1 - \sum_{i=1}^C \frac{|S_i|} {|S|}^2
+        \end{equation}
+    \item \textit{Information Gain} (IG)
+        \begin{equation}
+            IG(S, A) = GI(S) - \sum_{v \in Values(A)} \frac{|S_v|} {|S|} GI(S_v)
+        \end{equation}
+    \item \textit{Out-of-Bag Error}
+        \begin{equation}
+            OOB_Error = \frac{1}{n} \sum_{i=1}^n I(y_i \neq f_i(x_i))
+        \end{equation}
+\end{itemize}
+
 \subsection{Extreme Gradient Boosting (XGBoost)}
 
+XGBoost (\textit{eXtreme Gradient Boosting}) adalah algoritma pembelajaran mesin berbasis \textit{boosting gradient} yang sangat skalabel \cite{b25}. Algoritma ini sering digunakan dalam berbagai kompetisi pembelajaran mesin 
+karena kecepatan pelatihan dan kinerja generalisasinya yang unggul \cite{b26}. XGBoost bekerja dengan menggabungkan beberapa model pembelajaran lemah secara iteratif untuk membentuk model yang lebih kuat \cite{b26}. 
+Algoritma ini membangun model \textit{ensemble} dari pohon-pohon keputusan menggunakan fungsi aditif untuk meminimalkan fungsi objektif yang teratur \cite{b26}. Fungsi objektif dalam XGBoost menggabungkan fungsi 
+\textit{loss} dan penalti untuk menghindari \textit{overfitting}, di mana fungsi \textit{loss} dan regularisasi ini membantu mengontrol kompleksitas model \cite{b26}. Parameter penting dalam XGBoost termasuk laju pembelajaran, gamma, 
+kedalaman maksimum, dan subsampling, yang semuanya digunakan untuk mengoptimalkan kinerja model \cite{b26}.
+
+Untuk mengoptimalkan fungsi objektif, XGBoost menggunakan pendekatan orde kedua, di mana statistik gradien pertama dan kedua pada fungsi \textit{loss} digunakan \cite{b26}. Skor untuk pemilihan split dihitung berdasarkan 
+jumlah gradien pertama dan kedua, sementara bobot daun dioptimalkan untuk meminimalkan \textit{loss} \cite{b26}. Dengan teknik ini, XGBoost mampu menangani dataset besar dengan efisiensi tinggi dan memberikan kinerja 
+prediksi yang unggul [3]. Algoritma ini juga menggabungkan berbagai teknik seperti regularisasi, subsampling, dan optimasi berbasis cache untuk meningkatkan kecepatan pelatihan dan mengurangi \textit{overfitting} \cite{b26}. 
+Keseluruhan, XGBoost adalah algoritma yang sangat efektif dalam pembelajaran mesin dan telah terbukti unggul dalam berbagai tugas klasifikasi dan regresi \cite{b25}. XGBoost sangat diakui karena kemampuannya 
+dalam menangani data dalam skala besar dan kompleks, serta memberikan hasil yang sangat akurat dalam berbagai kompetisi pembelajaran mesin \cite{b25}\cite{b26}.
+
+\begin{itemize}
+    \item \textit{Objective function} 
+        \begin{equation}
+            Obj(t) = \sum_{i=1}^n L(t, i) + f(t)
+        \end{equation}
+    \item \textit{Regression loss} 
+        \begin{equation}
+            L(t, i) = \frac{1}{2} \left(y_i - f_t(x_i)\right)^2
+        \end{equation}
+    \item Penalti Regularisasi L1
+        \begin{equation}
+            f(t) = \lambda \sum_{j=1}^K |w_j|
+        \end{equation}
+    \item Penalti Regularisasi L2
+        \begin{equation}
+            f(t) = \lambda \sum_{j=1}^K w_j^2
+        \end{equation}
+    \item \textit{Gradient} 
+        \begin{equation}
+            g_{i}=\partial_{\hat{y}_{i}}l(y_{i},\hat{y}_{i})
+        \end{equation}
+    \item \textit{Hessian} 
+        \begin{equation}
+            h_{i}=\partial_{\hat{y}_{i}}^{2}l(y_{i},\hat{y}_{i})
+        \end{equation}
+    \item Formula pembaruan bobot daun
+        \begin{equation}
+            w_{j}^{*}=-\frac{\sum_{i\in I_{j}}g_{i}}{\sum_{i\in I_{j}}h_{i}+\lambda}
+        \end{equation}
+\end{itemize}
+
 \subsection{Categorical Boosting (CatBoost)}
+
+Algoritma \textit{machine learning} ini digunakan untuk menangani fitur kategorikal dan juga lebih cepat dibandingkan 
+dengan algoritma penguat lainnya karena mengimplementasikan pohon simetris. CatBoost, yang merupakan implementasi dari Gradient Boosting on Decision Tree (GDBT), 
+memiliki kombinasi gradient boosting dengan pohon keputusan yang memberikan hasil yang baik \cite{b28}.
+
+CatBoost dirancang untuk menangani data kategorikal secara efisien dengan mengkonversinya menjadi fitur numerik secara otomatis. Proses pelatihannya 
+melibatkan pembuatan sejumlah model pohon keputusan secara berurutan, di mana setiap model baru berusaha untuk mengurangi kesalahan dari model sebelumnya. 
+Teknik boosting ini memungkinkan CatBoost untuk memperbaiki kesalahan prediksi secara iteratif. Selain itu, CatBoost menggunakan pohon simetris yang mempercepat 
+waktu prediksi dan pelatihan. Algoritma ini juga memanfaatkan regularisasi untuk menghindari overfitting dan meningkatkan generalisasi model \cite{b29}.
 
 \subsection{Adaptive Boosting (AdaBoost)}
 
@@ -362,6 +558,23 @@ citation first, followed by the original foreign-language citation \cite{b6}.
 \bibitem{b11} K. Yuk Carrie Lin, ''Optimizing variable selection and neighbourhood size in the K-nearest neighbour algorithm,'' Computers and Industrial Engineering, vol. 191, p. 110142, May 2024, doi: 10.1016/j.cie.2024.110142.
 \bibitem{b12} S. Zhang, D. Cheng, Z. Deng, M. Zong, and X. Deng, ''A novel k NN algorithm with data-driven k parameter computation,'' Pattern Recognition Letters, vol. 109, pp. 44--54, Jul. 2018, doi: 10.1016/j.patrec.2017.09.036.
 \bibitem{b13} A. Rokem and K. Kay, ''Fractional ridge regression: a fast, interpretable reparameterization of ridge regression,'' GigaScience, vol. 9, no. 12, p. giaa133, Nov. 2020, doi: 10.1093/gigascience/giaa133.
+\bibitem{b14} B. Akturk, U. Beyaztas, H. L. Shang, and A. Mandal, ''Robust functional logistic regression,'' Adv Data Anal Classif, Feb. 2024, doi: 10.1007/s11634-023-00577-z.
+\bibitem{b15} M. Arifuzzaman, Md. R. Hasan, T. J. Toma, S. B. Hassan, and A. K. Paul, ''An Advanced Decision Tree-Based Deep Neural Network in Nonlinear Data Classification,'' Technologies, vol. 11, no. 1, p. 24, Feb. 2023, doi: 10.3390/technologies11010024.
+\bibitem{b16} F. Aaboub, H. Chamlal, and T. Ouaderhman, ''Analysis of the prediction performance of decision tree-based algorithms,'' in 2023 International Conference on Decision Aid Sciences and Applications (DASA), Annaba, Algeria: IEEE, Sep. 2023, pp. 7--11. doi: 10.1109/DASA59624.2023.10286809.
+\bibitem{b17} R. G. Mantovani, T. Horvath, R. Cerri, J. Vanschoren, and A. C. P. L. F. De Carvalho, ''Hyper-Parameter Tuning of a Decision Tree Induction Algorithm,'' in 2016 5th Brazilian Conference on Intelligent Systems (BRACIS), Recife: IEEE, Oct. 2016, pp. 37--42. doi: 10.1109/BRACIS.2016.018.
+\bibitem{b18} Y.-C. Zhang and L. Sakhanenko, "The naive Bayes classifier for functional data," Department of Statistics and Probability, Michigan State University, East Lansing, MI, USA, Accepted April 27, 2019.
+\bibitem{b19} A. Khajenezhad, M. A. Bashiri, and H. Beigy, "A distributed density estimation algorithm and its application to naive Bayes classification," Sharif Intelligent Systems Laboratory, Department of Computer Engineering, Sharif University of Technology, Tehran, Iran, Accepted October 20, 2020.
+\bibitem{b20} N. Guenther dan M. Schonlau, "Support vector machines," The Stata Journal, vol. 16, no. 4, pp. 917--937, 2016.
+\bibitem{b21} E. Osuna, R. Freund, dan F. Girosi, "An improved training algorithm for support vector machines," in Proceedings of IEEE, 1997, pp. 252--1723.
+\bibitem{b22} C. Cortes dan V. Vapnik, "Support-vector networks," Machine Learning, vol. 20, pp. 273-297, 1995.
+\bibitem{b23} N. Settouti, M. El Habib Daho, M. E. Amine Lazouni, and M. A. Chikh, "Random forest in semi-supervised learning (Co-Forest)," in 2013 8th International Workshop on Systems, Signal Processing and their Applications (WoSSPA), Algiers, Algeria, 2013, pp. 326-329, doi: 10.1109/WoSSPA.2013.6602385.
+\bibitem{b24} P. S. Akash, M. E. Kadir, A. A. Ali, M. N. Ahad Tawhid, and M. Shoyaib, "Introducing Confidence as a Weight in Random Forest," in 2019 International Conference on Robotics, Electrical and Signal Processing Techniques (ICREST), Dhaka, Bangladesh, 2019, pp. 611-616, doi: 10.1109/ICREST.2019.8644396.
+\bibitem{b25} C. Bentéjac, A. Csörgő, and G. Martínez-Muñoz, "A Comparative Analysis of XGBoost," Preprint, Nov. 2019.
+\bibitem{b26} T. Chen and C. Guestrin, "XGBoost: A Scalable Tree Boosting System," in Proceedings of the 22nd ACM SIGKDD International Conference on Knowledge Discovery and Data Mining (KDD '16), New York, NY, USA, 2016, pp. 785–794, doi: 10.1145/2939672.2939785.
+\bibitem{b27} P. Zhang, Y. Jia, and Y. Shang, "Research and application of XGBoost in imbalanced data," International Journal of Distributed Sensor Networks, vol. 18, no. 6, 2022, doi: 10.1177/15501329221106935.
+\bibitem{b28} C. P. Ananda, ''Machine Learning Untuk Prediksi Gaya Hidup Berdasarkan Socioeconomic Status Ses Menggunakan Algoritma Catboost Studi Kasus: Mahasiswa UIN Jakarta'', Bachelor's thesis, Fakultas Sains dan Teknologi UIN Syarif Hidayatullah Jakarta
+\bibitem{b29} R. Sanjeetha, A. Raj, K. Saivenu, M. I. Ahmed, B. Sathvik, A. Kanavalli, ''Detection and mitigation of botnet based DDoS attacks using catboost machine learning algorithm in SDN environment,'' International Journal of Advanced Technology and Engineering Exploration, vol. 8, no. 76, p. 445., 2021.
+
 \end{thebibliography}
 \vspace{12pt}
 \color{red}
